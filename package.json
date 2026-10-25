@@ -1,0 +1,9 @@
+{
+  "name": "nullpunkt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "serve": "npx --yes serve -l 8080 ."
+  }
+}
