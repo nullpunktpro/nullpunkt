@@ -221,10 +221,11 @@ function screenHome() {
     ? `<ul class="sessions">${recent
         .map((x) => {
           const s = setupById(x.setupId);
-          const g = [...x.groups].reverse().find((k) => k.holes?.length);
-          const stats = g ? groupStats(g.holes) : null;
+          const groups = x.groups.filter((k) => kindOf(k) === 'group' && k.holes?.length);
+          const g = groups[groups.length - 1];
+          const stats = g ? groupStats(included(g)) : null;
           return `<li><button class="session-row" data-act="openSession" data-id="${x.id}">
-            <span><b>${esc(s ? setupTitle(s) : 'Gelöschtes Setup')}</b><small>${dateStr(x.date)} · ${x.distance} m · ${T.home.groups(x.groups.filter((k) => k.holes?.length).length)}</small></span>
+            <span><b>${esc(s ? setupTitle(s) : 'Gelöschtes Setup')}</b><small>${dateStr(x.date)} · ${x.distance} m · ${T.home.groups(groups.length)}</small></span>
             <span class="num">${stats ? `${fmt(stats.es)} mm` : '–'}</span>
           </button></li>`;
         })
