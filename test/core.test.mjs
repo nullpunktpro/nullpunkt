@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { solveHomography, applyH, detectMarkers, rectify, MARKER_MM } from '../js/vision.js';
-import { groupStats, clickCorrection, caliberMm, shotMetrics, rateShot } from '../js/analysis.js';
+import { groupStats, clickCorrection, caliberMm, shotMetrics, rateShot, findOutliers, aimSeries, controlCheck } from '../js/analysis.js';
 
 // Scheibenmotiv in mm: Marken, Raster, Fadenkreuz, zwei Einschusslöcher
 function targetLum(x, y) {
@@ -111,4 +111,35 @@ test('Ruhige und verrissene Schüsse werden unterschieden', () => {
   };
   assert.equal(rateShot(shotMetrics(mk(0))), 'ruhig');
   assert.equal(rateShot(shotMetrics(mk(0.08))), 'verrissen');
+});
+
+test('Ausreißer: Ölschuss wird erkannt, enge Gruppe bleibt unberührt', () => {
+  const group = [{ x: 2, y: 1 }, { x: -3, y: 4 }, { x: 1, y: -5 }, { x: 4, y: 2 }, { x: -2, y: -1 }];
+  assert.equal(findOutliers(group).size, 0);
+  const withFlyer = [{ x: 45, y: -60 }, ...group.slice(1)];
+  assert.deepEqual([...findOutliers(withFlyer)], [0]);
+  assert.equal(findOutliers(group.slice(0, 2)).size, 0);
+});
+
+test('Haltepunktverlauf ist zum Schuss hin auf 0 normiert', () => {
+  const tr = [];
+  for (let t = -1500; t <= 300; t += 10) tr.push({ t, gx: t < -500 ? 0.002 : 0, gy: 0, gz: 0, ax: 0, ay: 0, az: 0 });
+  const s = aimSeries(tr);
+  assert.ok(s.length > 50);
+  assert.equal(s[s.length - 1][1], 0);
+  assert.ok(s[0][1] > s[s.length - 1][1]);
+});
+
+test('Kontrollschuss: im Streukreis, Restkorrektur und Schützenfehler', () => {
+  const ref = groupStats([{ x: 30, y: -40 }, { x: 40, y: -50 }, { x: 35, y: -45 }]);
+  const base = { ref, aim: { x: 0, y: 40 }, distanceM: 100, einheit: 'mrad', klick: 0.1 };
+  // Empfehlung 8,5 hoch / 3,5 links -> 9 hoch, 4 links gedreht: Erwartung (−5, 45)
+  const ok = controlCheck({ ...base, hole: { x: -3, y: 42 }, adjust: { up: 9, right: -4 }, calm: true });
+  assert.equal(ok.verdict, 'ok');
+  assert.deepEqual(ok.expect, { x: -5, y: 45 });
+  const rest = controlCheck({ ...base, hole: { x: 33, y: 2 }, adjust: { up: 5, right: 0 }, calm: true });
+  assert.equal(rest.verdict, 'rest');
+  assert.deepEqual(rest.rest, { up: 4, right: -3 });
+  assert.equal(controlCheck({ ...base, hole: { x: 60, y: 60 }, adjust: { up: 9, right: -4 }, calm: false }).verdict, 'shooter');
+  assert.equal(controlCheck({ ...base, hole: { x: 60, y: 60 }, adjust: { up: 9, right: -4 }, calm: true }).verdict, 'off');
 });

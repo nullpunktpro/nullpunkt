@@ -1,5 +1,5 @@
 // Offline-Fähigkeit: erst Netz (damit Updates sofort ankommen), ohne Netz aus dem Cache.
-const CACHE = 'nullpunkt-v1';
+const CACHE = 'nullpunkt-v2';
 const SHELL = [
   './',
   'index.html',
@@ -11,6 +11,7 @@ const SHELL = [
   'js/vision.js',
   'js/analysis.js',
   'js/target.js',
+  'js/chart.js',
   'manifest.webmanifest',
   'assets/icon.svg',
   'assets/icon-180.png',

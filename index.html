@@ -3,21 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Nullpunkt – Einschießen mit Scheibenfoto und Ruhemessung</title>
-  <meta name="description" content="Gewehr einschießen: Scheibe drucken, fotografieren, Klickkorrektur ablesen. Dazu misst das iPhone, wie ruhig die Waffe vor dem Schuss stand.">
+  <title>Nullpunkt – Gewehr mit Zielfernrohr einschießen | App für Jäger und Sportschützen</title>
+  <meta name="description" content="Kostenlose Einschieß-App für Jäger und Sportschützen: Zielscheibe drucken, Treffer fotografieren, Klickkorrektur fürs Zielfernrohr in mrad oder MOA ablesen, auf Fleck oder GEE. Mit Ausreißer-Erkennung, Kontrollschuss und Ruhemessung per Smartphone-Sensor.">
+  <link rel="canonical" href="https://nullpunkt.pro/">
   <meta name="theme-color" content="#121614">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Nullpunkt">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nullpunkt.pro/">
+  <meta property="og:title" content="Nullpunkt – Büchse mit Zielfernrohr einschießen">
+  <meta property="og:description" content="Scheibe fotografieren, Klickkorrektur ablesen, Kontrollschuss prüfen. Kostenlos, ohne Anmeldung, auf iPhone und Android.">
+  <meta property="og:image" content="https://nullpunkt.pro/assets/icon-512.png">
+  <meta property="og:locale" content="de_DE">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="stylesheet" href="css/app.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Nullpunkt",
+    "url": "https://nullpunkt.pro/",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "iOS, Android, Browser",
+    "inLanguage": "de",
+    "description": "Einschieß-App für Jäger und Sportschützen: Trefferbild per Foto auswerten, Klickkorrektur für das Zielfernrohr berechnen, Ausreißer erkennen, Kontrollschuss bewerten und die Ruhe der Waffe vor dem Schuss mit den Bewegungssensoren des Smartphones messen.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
   <script type="module" src="js/main.js"></script>
 </head>
-<body>
+<body data-screen="home">
   <main id="app"><p>Nullpunkt lädt …</p></main>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">Büchse mit Zielfernrohr einschießen, Schritt für Schritt</h2>
+    <p>Nullpunkt ist eine kostenlose Web-App für <strong>Jäger und Sportschützen</strong>, die ihre Waffe mit Zieloptik einschießen oder die Treffpunktlage kontrollieren wollen. Du druckst eine Zielscheibe, fotografierst sie nach dem Schießen, und die App rechnet aus, wie viele Klicks du am Zielfernrohr drehen musst: in mrad oder MOA, auf Fleck oder auf GEE (zum Beispiel 4 cm hoch auf 100 m).</p>
+    <h3>Was Nullpunkt kann</h3>
+    <ul>
+      <li><strong>Trefferbild per Foto auswerten:</strong> Streukreis, mittlerer Treffpunkt und Abweichung in Zentimetern und Klicks. Die Eckmarken der Scheibe machen das Foto maßhaltig, auch wenn es schräg aufgenommen ist.</li>
+      <li><strong>Ausreißer erkennen:</strong> etwa den Ölschuss nach dem Reinigen. Du entscheidest selbst, welche Treffer zur Gruppe zählen.</li>
+      <li><strong>Ruhe vor dem Schuss messen:</strong> Das Smartphone an der Waffe zeichnet mit seinen Bewegungssensoren auf, wie ruhig die Waffe in der Sekunde vor dem Schuss lag. So siehst du, ob die Streuung von der Waffe kommt oder vom Schützen.</li>
+      <li><strong>Kontrollschuss bewerten:</strong> Nach dem Verstellen prüft Nullpunkt, ob der Schuss im Streukreis um den Zielpunkt liegt.</li>
+      <li><strong>Setups speichern:</strong> mehrere Waffen, Zielfernrohre und Laborierungen, mit Verlauf.</li>
+    </ul>
+    <h3>Für wen</h3>
+    <p>Für Jäger vor der Jagdsaison, nach einem Montagewechsel oder wenn das Zielfernrohr einen Schlag abbekommen hat. Für Sportschützen und Wiederlader, die eine neue Laborierung testen. Für alle, die beim Einschießen nicht raten wollen.</p>
+    <h3>So läuft es ab</h3>
+    <ol>
+      <li>Setup anlegen: Waffe, Kaliber, Zielfernrohr mit Klickwert, Munition.</li>
+      <li>Zielscheibe drucken und Smartphone fest an der Waffe anbringen.</li>
+      <li>Ruhe-Referenz aufnehmen: Waffe aufgelegt, nichts berühren.</li>
+      <li>Eine Gruppe von 5 Schuss abgeben und die Treffer fotografieren.</li>
+      <li>Ausreißer prüfen, Korrektur am Zielfernrohr drehen.</li>
+      <li>Kontrollschuss abgeben und bestätigen lassen.</li>
+    </ol>
+    <p class="muted">Läuft im Browser auf iPhone und Android, ohne Anmeldung und ohne App-Store. Alle Daten bleiben auf deinem Gerät.</p>
+  </section>
   <noscript>Nullpunkt braucht JavaScript.</noscript>
 </body>
 </html>
