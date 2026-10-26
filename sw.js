@@ -1,11 +1,16 @@
 // Offline-Fähigkeit: erst Netz (damit Updates sofort ankommen), ohne Netz aus dem Cache.
-const CACHE = 'nullpunkt-v3';
+const CACHE = 'nullpunkt-v4';
 const SHELL = [
   './',
   'index.html',
+  'en/',
+  'en/index.html',
+  'en/manifest.webmanifest',
   'css/app.css',
   'js/main.js',
+  'js/i18n.js',
   'js/strings.de.js',
+  'js/strings.en.js',
   'js/store.js',
   'js/sensors.js',
   'js/vision.js',
@@ -17,6 +22,7 @@ const SHELL = [
   'assets/icon-180.png',
   'assets/icon-192.png',
   'assets/zielscheibe-a4.pdf',
+  'assets/target-a4-en.pdf',
   'impressum.html',
   'datenschutz.html',
 ];

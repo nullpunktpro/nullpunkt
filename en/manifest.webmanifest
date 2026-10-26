@@ -1,0 +1,17 @@
+{
+  "name": "Nullpunkt",
+  "short_name": "Nullpunkt",
+  "description": "Zero your scoped rifle with a target photo and stability measurement",
+  "lang": "en",
+  "start_url": "/en/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#121614",
+  "theme_color": "#121614",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

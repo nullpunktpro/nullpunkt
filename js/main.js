@@ -1,4 +1,4 @@
-import { T } from './strings.de.js';
+import { T, LANG } from './i18n.js';
 import * as store from './store.js';
 import { MotionRecorder, requestWakeLock } from './sensors.js';
 import { detectMarkers, solveHomography, rectify, toGray, MARKER_MM, VIEW_R, VIEW_SCALE } from './vision.js';
@@ -8,9 +8,9 @@ import { aimChart } from './chart.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const fmt = (v, d = 0) => (v == null || !isFinite(v) ? '–' : v.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d }));
+const fmt = (v, d = 0) => (v == null || !isFinite(v) ? '–' : v.toLocaleString(T.locale, { minimumFractionDigits: d, maximumFractionDigits: d }));
 const signed = (v, d = 0) => (v > 0 ? '+' : '') + fmt(v, d);
-const dateStr = (iso) => new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+const dateStr = (iso) => new Date(iso).toLocaleString(T.locale, { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
 const app = $('#app');
 const st = {
@@ -54,7 +54,8 @@ function newSetup() {
   };
 }
 
-const setupTitle = (s) => s.waffe.name || `${s.waffe.typ} ${s.waffe.kaliber}`;
+const typLabel = (typ) => T.wizard.typen.find(([k]) => k === typ)?.[1] || typ;
+const setupTitle = (s) => s.waffe.name || `${typLabel(s.waffe.typ)} ${s.waffe.kaliber}`;
 
 const kindOf = (g) => g.kind || 'group';
 const groupNo = (i) => st.session.groups.slice(0, i + 1).filter((g) => kindOf(g) === 'group').length;
@@ -80,10 +81,10 @@ function adjFrom(corr, kind) {
 }
 
 function adjText(c) {
-  if (!c || (!c.up && !c.right)) return 'nichts';
+  if (!c || (!c.up && !c.right)) return T.misc.nothing;
   const p = [];
-  if (c.up) p.push(`${Math.abs(c.up)} ${c.up > 0 ? 'hoch' : 'tief'}`);
-  if (c.right) p.push(`${Math.abs(c.right)} ${c.right > 0 ? 'rechts' : 'links'}`);
+  if (c.up) p.push(`${Math.abs(c.up)} ${T.misc.dir[c.up > 0 ? 'hoch' : 'tief']}`);
+  if (c.right) p.push(`${Math.abs(c.right)} ${T.misc.dir[c.right > 0 ? 'rechts' : 'links']}`);
   return p.join(', ');
 }
 
@@ -104,7 +105,7 @@ function chartFor(groups) {
       const series = s.trace ? aimSeries(s.trace) : [];
       if (!series.length) return;
       const hole = g.holes.find((h) => h.shot === i);
-      shots.push({ series, rating: s.rating, label: kindOf(g) === 'control' ? 'K' : String(i + 1), out: hole?.out });
+      shots.push({ series, rating: s.rating, label: kindOf(g) === 'control' ? T.misc.controlLabel : String(i + 1), out: hole?.out });
     })
   );
   const rest = st.session?.rest?.series || null;
@@ -203,8 +204,8 @@ function screenHome() {
           return `<article class="card setup">
           <div class="setup-head"><h3>${esc(setupTitle(s))}</h3><span class="tag">${esc(s.waffe.kaliber)}</span></div>
           <dl class="kv">
-            <dt>Optik</dt><dd>${s.optik.modell ? `${esc(s.optik.modell)} · ` : ''}${fmt(s.optik.klick, s.optik.klick < 0.1 ? 3 : 2)} ${esc(s.optik.einheit)}</dd>
-            <dt>Munition</dt><dd>${esc(s.muni.name || '–')}${s.muni.los ? ` · Los ${esc(s.muni.los)}` : ''}</dd>
+            <dt>${T.misc.optik}</dt><dd>${s.optik.modell ? `${esc(s.optik.modell)} · ` : ''}${fmt(s.optik.klick, s.optik.klick < 0.1 ? 3 : 2)} ${esc(s.optik.einheit)}</dd>
+            <dt>${T.misc.muni}</dt><dd>${esc(s.muni.name || '–')}${s.muni.los ? ` · ${T.misc.lot} ${esc(s.muni.los)}` : ''}</dd>
           </dl>
           <div class="row-btns">
             <button class="btn primary" data-act="startSession" data-id="${s.id}"${locked ? ' disabled' : ''}>${T.home.start}</button>
@@ -225,7 +226,7 @@ function screenHome() {
           const g = groups[groups.length - 1];
           const stats = g ? groupStats(included(g)) : null;
           return `<li><button class="session-row" data-act="openSession" data-id="${x.id}">
-            <span><b>${esc(s ? setupTitle(s) : 'Gelöschtes Setup')}</b><small>${dateStr(x.date)} · ${x.distance} m · ${T.home.groups(groups.length)}</small></span>
+            <span><b>${esc(s ? setupTitle(s) : T.misc.deletedSetup)}</b><small>${dateStr(x.date)} · ${x.distance} m · ${T.home.groups(groups.length)}</small></span>
             <span class="num">${stats ? `${fmt(stats.es)} mm` : '–'}</span>
           </button></li>`;
         })
@@ -243,11 +244,12 @@ function screenHome() {
       ${sessionRows}
     </section>
     <nav class="links">
-      <a href="assets/zielscheibe-a4.pdf" target="_blank" rel="noopener">${T.links.target}</a>
+      <a href="${T.targetPdf}" target="_blank" rel="noopener">${T.links.target}</a>
       <button class="link" data-act="sensorTest"${locked ? ' disabled' : ''}>${T.links.sensorTest}</button>
       <button class="link" data-act="info">${T.links.info}</button>
-      <a href="impressum.html">${T.links.imprint}</a>
-      <a href="datenschutz.html">${T.links.privacy}</a>
+      <a href="/impressum.html">${T.links.imprint}</a>
+      <a href="/datenschutz.html">${T.links.privacy}</a>
+      ${LANG === 'en' ? `<a href="/" data-lang="de" hreflang="de">${T.langSwitch.de}</a>` : `<a href="/en/" data-lang="en" hreflang="en">${T.langSwitch.en}</a>`}
     </nav>`;
 }
 
@@ -263,12 +265,12 @@ function screenWizard() {
       ${field('draft', 'waffe.name', W.waffe.name, { ph: W.waffe.namePh })}
       ${field('draft', 'waffe.typ', W.waffe.typ, { options: W.typen })}
       <div class="grid2">${field('draft', 'waffe.kaliber', W.waffe.kaliber, { list: 'kaliber' })}${field('draft', 'waffe.lauf', W.waffe.lauf, { inputmode: 'decimal' })}</div>
-      <div class="grid2">${field('draft', 'waffe.drall', W.waffe.drall, { ph: '1:11"' })}${field('draft', 'waffe.sd', W.waffe.sd, { options: ['ja', 'nein'] })}</div>
+      <div class="grid2">${field('draft', 'waffe.drall', W.waffe.drall, { ph: '1:11"' })}${field('draft', 'waffe.sd', W.waffe.sd, { options: W.sdOptions })}</div>
       <datalist id="kaliber">${['.222 Rem', '.223 Rem', '.243 Win', '6.5 Creedmoor', '6.5x55 SE', '.270 Win', '7x64', '.308 Win', '.30-06 Spr', '8x57 IS', '.300 Win Mag', '9,3x62', '.22 lr', '.17 HMR'].map((k) => `<option value="${k}">`).join('')}</datalist>`,
     () => `<h2>${W.optik.title}</h2><p class="muted">${W.optik.lead}</p>
       ${field('draft', 'optik.modell', W.optik.modell, { ph: W.optik.modellPh })}
       <div class="grid2">${field('draft', 'optik.einheit', W.optik.einheit, { options: ['mrad', 'MOA'] })}${field('draft', 'optik.hoehe', W.optik.hoehe, { inputmode: 'decimal' })}</div>
-      ${field('draft', 'optik.klick', W.optik.klick, { options: CLICK_OPTIONS[d.optik.einheit], num: true })}`,
+      ${field('draft', 'optik.klick', W.optik.klick, { options: CLICK_OPTIONS[d.optik.einheit].map(([v]) => [v, T.clickLabel(d.optik.einheit, v)]), num: true })}`,
     () => `<h2>${W.muni.title}</h2><p class="muted">${W.muni.lead}</p>
       ${field('draft', 'muni.name', W.muni.name, { ph: W.muni.namePh })}
       <div class="grid2">${field('draft', 'muni.los', W.muni.los)}${field('draft', 'muni.gewicht', W.muni.gewicht, { inputmode: 'decimal' })}</div>
@@ -291,7 +293,7 @@ function screenPrep() {
     <section class="card form">
       <h2>${P.title}${s ? ` · ${esc(setupTitle(s))}` : ''}</h2>
       <p class="muted">${P.lead}</p>
-      <a class="btn" href="assets/zielscheibe-a4.pdf" target="_blank" rel="noopener">${P.target}</a>
+      <a class="btn" href="${T.targetPdf}" target="_blank" rel="noopener">${P.target}</a>
       <p class="hint">${P.targetHint}</p>
       ${st.sensorTestOnly ? '' : field('prep', 'distance', P.distance, { options: [25, 50, 100, 150, 200, 300], num: true })}
       ${st.sensorTestOnly ? '' : field('prep', 'aim', P.aim, { options: P.aims, num: true })}
@@ -311,7 +313,7 @@ function shotItems(shots) {
   return shots
     .map((s, i) => {
       const m = s.metrics;
-      return `<li><span class="num">#${i + 1}</span><span class="num small">${m ? `Wanderung ${fmt(m.wander, 2)} mrad · Ruck ${fmt(m.jerk, 1)}` : ''}${s.manual ? ' · manuell' : ''}</span><span class="pill ${s.rating}">${T.ratings[s.rating]}</span></li>`;
+      return `<li><span class="num">#${i + 1}</span><span class="num small">${m ? T.misc.metrics(fmt(m.wander, 2), fmt(m.jerk, 1)) : ''}${s.manual ? T.misc.manual : ''}</span><span class="pill ${s.rating}">${T.ratings[s.rating]}</span></li>`;
     })
     .join('');
 }
@@ -480,7 +482,7 @@ function screenPhoto() {
     : `<div class="actions"><button class="btn" data-act="backToShoot">${P.more}</button><button class="btn primary" data-act="evaluate"${g.holes.length ? '' : ' disabled'}>${P.evaluate}</button></div>`;
   return `<header class="bar-top"><button class="btn ghost small" data-act="backToShoot">${T.nav.back}</button></header>
     <section class="card">
-      <h2>${P.title} · ${control ? T.control.title : `Gruppe ${groupNo(st.groupIdx)}`}</h2>
+      <h2>${P.title} · ${control ? T.control.title : T.misc.group(groupNo(st.groupIdx))}</h2>
       ${body}
     </section>
     ${ph.mode === 'holes' ? actionsBar : ''}`;
@@ -543,7 +545,7 @@ function holeSelector(g) {
       const shot = shotOf(g, h);
       const info = shot ? `<span class="pill ${shot.rating}">${T.ratings[shot.rating]}</span>` : `<small class="muted">${R.noSensor}</small>`;
       return `<button class="sel-row" aria-pressed="${!h.out}" data-act="toggleHole" data-i="${i}">
-        <span class="sel-box" aria-hidden="true"></span><b>Treffer ${i + 1}</b>${info}<span class="sel-state">${h.out ? R.outGroup : R.inGroup}</span></button>`;
+        <span class="sel-box" aria-hidden="true"></span><b>${R.hit(i + 1)}</b>${info}<span class="sel-state">${h.out ? R.outGroup : R.inGroup}</span></button>`;
     })
     .join('')}</div>`;
 }
@@ -570,7 +572,7 @@ function screenGroup() {
       <div class="tiles">
         <div class="tile"><small>${R.spread}</small><b class="num">${fmt(stats?.es)}</b><em>mm</em></div>
         <div class="tile"><small>${R.angle}</small><b class="num">${fmt(mrad, 2)}</b><em>mrad · ${fmt(mrad / 0.290888, 1)} MOA</em></div>
-        <div class="tile"><small>${R.mpi}</small><b class="num">${stats ? `${signed(stats.mpi.x)} / ${signed(stats.mpi.y)}` : '–'}</b><em>mm rechts / hoch</em></div>
+        <div class="tile"><small>${R.mpi}</small><b class="num">${stats ? `${signed(stats.mpi.x)} / ${signed(stats.mpi.y)}` : '–'}</b><em>${T.misc.mpiUnit}</em></div>
       </div>
     </section>
     <section class="card">
@@ -582,7 +584,7 @@ function screenGroup() {
     </section>
     <section class="card">
       <h3>${R.correction}</h3>
-      <p class="muted small">${aim.y ? R.aimHigh(aim.y / 10) : R.aimFleck} · ${dist} m · ${s ? `${fmt(s.optik.klick, s.optik.klick < 0.1 ? 3 : 2)} ${esc(s.optik.einheit)} je Klick` : ''}</p>
+      <p class="muted small">${aim.y ? R.aimHigh(aim.y / 10) : R.aimFleck} · ${dist} m · ${s ? `${fmt(s.optik.klick, s.optik.klick < 0.1 ? 3 : 2)} ${esc(s.optik.einheit)} ${T.misc.perClick}` : ''}</p>
       ${corrBlock(corr, diff)}
       ${stats && stats.n < 3 ? `<p class="hint">${R.fewShots}</p>` : ''}
     </section>
@@ -620,7 +622,7 @@ function screenControl() {
   const aim = aimPoint();
   const res = controlCheck({ hole: hit.mpi, ref: refStats, adjust: g.adjustTotal || { up: 0, right: 0 }, aim, distanceM: dist, einheit: s.optik.einheit, klick: s.optik.klick, calm });
   const cls = res.verdict === 'ok' ? 'ok' : res.verdict === 'rest' ? 'hint' : 'error';
-  const holes = g.holes.map((h) => ({ ...h, label: 'K' }));
+  const holes = g.holes.map((h) => ({ ...h, label: T.misc.controlLabel }));
   const restDiff = { x: hit.mpi.x - aim.x, y: hit.mpi.y - aim.y };
 
   return `${header}
@@ -652,14 +654,14 @@ function screenSession() {
   const confirmDel = st.confirm === `session:${x.id}`;
   return `<header class="bar-top"><button class="btn ghost small" data-act="home">${T.nav.home}</button></header>
     <section class="card">
-      <h2>${esc(s ? setupTitle(s) : 'Gelöschtes Setup')}</h2>
-      <p class="muted">${dateStr(x.date)} · ${x.distance} m · ${x.mode === 'trocken' ? 'Trockentraining' : 'scharf'}</p>
+      <h2>${esc(s ? setupTitle(s) : T.misc.deletedSetup)}</h2>
+      <p class="muted">${dateStr(x.date)} · ${x.distance} m · ${x.mode === 'trocken' ? T.misc.modeDry : T.misc.modeLive}</p>
       <ul class="sessions">${x.groups
         .map((g, i) => {
           const stats = groupStats(included(g));
-          const label = kindOf(g) === 'control' ? T.control.title : `Gruppe ${groupNo(i)}`;
+          const label = kindOf(g) === 'control' ? T.control.title : T.misc.group(groupNo(i));
           return `<li><button class="session-row" data-act="openGroup" data-i="${i}"${stats ? '' : ' disabled'}>
-            <span><b>${label}</b><small>${g.shots.length} Schuss gemessen · ${g.holes?.length || 0} Treffer</small></span>
+            <span><b>${label}</b><small>${T.misc.groupRow(g.shots.length, g.holes?.length || 0)}</small></span>
             <span class="num">${stats ? `${fmt(stats.es)} mm` : '–'}</span></button></li>`;
         })
         .join('')}</ul>
@@ -812,7 +814,7 @@ function onShot({ trace, manual }) {
     st.testShots.push(shot);
     const list = $('#shotList');
     if (list) list.innerHTML = shotItems(st.testShots);
-    flash(`Schuss erkannt: ${T.ratings[shot.rating]}`);
+    flash(T.misc.shotDetected(T.ratings[shot.rating]));
     return;
   }
   currentGroup().shots.push(shot);
@@ -1318,6 +1320,14 @@ const actions = {
 // ---------- Ereignisse ----------
 
 app.addEventListener('click', (e) => {
+  // Sprachwahl merken, damit die automatische Weiterleitung sie respektiert
+  const lang = e.target.closest('[data-lang]');
+  if (lang) {
+    try {
+      localStorage.setItem('nullpunkt.lang', lang.dataset.lang);
+    } catch {}
+    return;
+  }
   const el = e.target.closest('[data-act]');
   if (el && !el.disabled) {
     actions[el.dataset.act]?.(el.dataset, el);
@@ -1398,7 +1408,7 @@ document.addEventListener('visibilitychange', async () => {
 });
 
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
-  navigator.serviceWorker.register('./sw.js').catch(() => {});
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
 }
 
 render();

@@ -20,9 +20,30 @@ MARKER_SIZE = 20
 CORE = 8
 
 
-def target_pdf(path):
+TEXT = {
+    "de": {
+        "title": "Nullpunkt Einschießscheibe",
+        "sub": "Einschießscheibe · Druck in tatsächlicher Größe (100 %)",
+        "top": "OBEN",
+        "check": "Kontrollmaß 100 mm – nachmessen, sonst stimmt der Druckmaßstab nicht",
+        "fields": [("Datum", "Distanz (m)"), ("Waffe", "Gruppe Nr."), ("Munition / Los", "Klicks gedreht")],
+        "foot": "Foto: ganze Scheibe mit allen vier Eckmarken, möglichst gerade von vorn, ohne Schatten.",
+    },
+    "en": {
+        "title": "Nullpunkt zeroing target",
+        "sub": "Zeroing target · print at actual size (100 %)",
+        "top": "TOP",
+        "check": "Check length 100 mm – measure it, otherwise the print scale is wrong",
+        "fields": [("Date", "Distance (m)"), ("Rifle", "Group no."), ("Ammo / lot", "Clicks turned")],
+        "foot": "Photo: whole target with all four corner markers, as straight-on as possible, no shadows.",
+    },
+}
+
+
+def target_pdf(path, lang="de"):
+    t = TEXT[lang]
     c = canvas.Canvas(str(path), pagesize=A4)
-    c.setTitle("Nullpunkt Einschießscheibe")
+    c.setTitle(t["title"])
     pw, ph = A4
     cx, cy = pw / 2, ph - 140 * mm  # Haltepunkt
 
@@ -32,7 +53,7 @@ def target_pdf(path):
     c.setFont("Helvetica-Bold", 16)
     c.drawString(20 * mm, ph - 22 * mm, "NULLPUNKT")
     c.setFont("Helvetica", 10)
-    c.drawString(20 * mm, ph - 28 * mm, "Einschießscheibe · Druck in tatsächlicher Größe (100 %)")
+    c.drawString(20 * mm, ph - 28 * mm, t["sub"])
     c.drawRightString(pw - 20 * mm, ph - 22 * mm, "nullpunkt.pro")
 
     # Raster ±70 mm
@@ -70,7 +91,7 @@ def target_pdf(path):
             c.rect(*P(x - CORE / 2, y - CORE / 2), CORE * mm, CORE * mm, stroke=0, fill=1)
     c.setFillGray(0)
     c.setFont("Helvetica", 7)
-    c.drawString(*P(-MARKER_OFFSET + half + 3, MARKER_OFFSET - 2), "OBEN")
+    c.drawString(*P(-MARKER_OFFSET + half + 3, MARKER_OFFSET - 2), t["top"])
 
     # Kontrollmaß 100 mm
     y = -105
@@ -79,12 +100,12 @@ def target_pdf(path):
     c.line(*P(-50, y - 3), *P(-50, y + 3))
     c.line(*P(50, y - 3), *P(50, y + 3))
     c.setFont("Helvetica", 8)
-    c.drawCentredString(*P(0, y - 7), "Kontrollmaß 100 mm – nachmessen, sonst stimmt der Druckmaßstab nicht")
+    c.drawCentredString(*P(0, y - 7), t["check"])
 
     # Protokollfelder
     c.setFont("Helvetica", 9)
     c.setLineWidth(0.4)
-    fields = [("Datum", "Distanz (m)"), ("Waffe", "Gruppe Nr."), ("Munition / Los", "Klicks gedreht")]
+    fields = t["fields"]
     top = cy - 125 * mm
     for row, (left, right) in enumerate(fields):
         yy = top - row * 9 * mm
@@ -95,7 +116,7 @@ def target_pdf(path):
 
     c.setFont("Helvetica", 7)
     c.setFillGray(0.35)
-    c.drawString(20 * mm, 10 * mm, "Foto: ganze Scheibe mit allen vier Eckmarken, möglichst gerade von vorn, ohne Schatten.")
+    c.drawString(20 * mm, 10 * mm, t["foot"])
     c.showPage()
     c.save()
 
@@ -123,6 +144,7 @@ ICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect 
 if __name__ == "__main__":
     ASSETS.mkdir(exist_ok=True)
     target_pdf(ASSETS / "zielscheibe-a4.pdf")
+    target_pdf(ASSETS / "target-a4-en.pdf", "en")
     for n in (180, 192, 512):
         icon(n).save(ASSETS / f"icon-{n}.png")
     (ASSETS / "icon.svg").write_text(ICON_SVG, encoding="utf-8")

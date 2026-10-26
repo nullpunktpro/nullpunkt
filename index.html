@@ -3,9 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    // Nicht-deutsche Geräte auf /en/ leiten; gespeicherte Sprachwahl geht vor, Suchmaschinen bleiben hier
+    (function () {
+      var pref = null;
+      try { pref = localStorage.getItem('nullpunkt.lang'); } catch (e) {}
+      var bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+      var de = /^de(-|_|$)/i.test((navigator.languages && navigator.languages[0]) || navigator.language || '');
+      if (!bot && (pref === 'en' || (!pref && !de))) location.replace('/en/' + location.search + location.hash);
+    })();
+  </script>
   <title>Nullpunkt – Gewehr mit Zielfernrohr einschießen | App für Jäger und Sportschützen</title>
   <meta name="description" content="Kostenlose Einschieß-App für Jäger und Sportschützen: Zielscheibe drucken, Treffer fotografieren, Klickkorrektur fürs Zielfernrohr in mrad oder MOA ablesen, auf Fleck oder GEE. Mit Ausreißer-Erkennung, Kontrollschuss und Ruhemessung per Smartphone-Sensor.">
   <link rel="canonical" href="https://nullpunkt.pro/">
+  <link rel="alternate" hreflang="de" href="https://nullpunkt.pro/">
+  <link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nullpunkt.pro/en/">
   <meta name="theme-color" content="#121614">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -17,10 +30,10 @@
   <meta property="og:description" content="Scheibe fotografieren, Klickkorrektur ablesen, Kontrollschuss prüfen. Kostenlos, ohne Anmeldung, auf iPhone und Android.">
   <meta property="og:image" content="https://nullpunkt.pro/assets/icon-512.png">
   <meta property="og:locale" content="de_DE">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icon-180.png">
+  <link rel="stylesheet" href="/css/app.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,7 +47,7 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
   }
   </script>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="/js/main.js"></script>
 </head>
 <body data-screen="home">
   <main id="app"><p>Nullpunkt lädt …</p></main>

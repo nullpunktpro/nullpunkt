@@ -1,5 +1,6 @@
 // Scheibe als SVG für die Ergebnisansicht (gleiche Geometrie wie die Druckvorlage).
 import { MARKER_MM, MARKER_SIZE } from './vision.js';
+import { T } from './i18n.js';
 
 // holes: [{x, y, out?}] – aussortierte Treffer erscheinen hohl. aim: Zielpunkt (z. B. GEE 4 cm hoch).
 // expect: {x, y, r} – Erwartungskreis für den Kontrollschuss.
@@ -37,7 +38,7 @@ export function targetSVG({ holes = [], mpi = null, calDia = 7.8, older = [], ai
   const e = expect
     ? `<circle cx="${expect.x}" cy="${-expect.y}" r="${expect.r}" fill="none" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="2 1.5"/>`
     : '';
-  return `<svg viewBox="-100 -100 200 200" role="img" aria-label="Scheibe mit Treffern">
+  return `<svg viewBox="-100 -100 200 200" role="img" aria-label="${T.targetAria}">
   <rect x="-100" y="-100" width="200" height="200" fill="var(--paper)"/>
   ${lines.join('')}
   <circle r="40" fill="none" stroke="var(--paper-ink)" stroke-width="0.5"/>

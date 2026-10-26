@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    // German devices go to the German page; a saved language choice wins, search engines stay here
+    (function () {
+      var pref = null;
+      try { pref = localStorage.getItem('nullpunkt.lang'); } catch (e) {}
+      var bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+      var de = /^de(-|_|$)/i.test((navigator.languages && navigator.languages[0]) || navigator.language || '');
+      if (!bot && (pref === 'de' || (!pref && de))) location.replace('/' + location.search + location.hash);
+    })();
+  </script>
+  <title>Nullpunkt – Zero your rifle scope | App for hunters and sport shooters</title>
+  <meta name="description" content="Free zeroing app for hunters and sport shooters: print a target, photograph your hits, read the scope click correction in mrad or MOA, dead on or with a hunting zero. With flyer detection, confirmation shot and stability measurement using your smartphone’s sensors.">
+  <link rel="canonical" href="https://nullpunkt.pro/en/">
+  <link rel="alternate" hreflang="de" href="https://nullpunkt.pro/">
+  <link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nullpunkt.pro/en/">
+  <meta name="theme-color" content="#121614">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Nullpunkt">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nullpunkt.pro/en/">
+  <meta property="og:title" content="Nullpunkt – zero your scoped rifle">
+  <meta property="og:description" content="Photograph the target, read the click correction, check the confirmation shot. Free, no sign-up, on iPhone and Android.">
+  <meta property="og:image" content="https://nullpunkt.pro/assets/icon-512.png">
+  <meta property="og:locale" content="en_GB">
+  <link rel="manifest" href="/en/manifest.webmanifest">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icon-180.png">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Nullpunkt",
+    "url": "https://nullpunkt.pro/en/",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "iOS, Android, Browser",
+    "inLanguage": "en",
+    "description": "Zeroing app for hunters and sport shooters: evaluate your group from a photo, calculate the scope click correction, detect flyers, assess the confirmation shot and measure how steady the rifle was before the shot using the smartphone’s motion sensors.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body data-screen="home">
+  <main id="app"><p>Nullpunkt is loading …</p></main>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">Zero your scoped rifle, step by step</h2>
+    <p>Nullpunkt is a free web app for <strong>hunters and sport shooters</strong> who want to zero a rifle with a scope or check its point of impact. You print a target, photograph it after shooting, and the app tells you how many clicks to turn on your scope: in mrad or MOA, dead on or with a hunting zero (for example 4 cm high at 100 m).</p>
+    <h3>What Nullpunkt does</h3>
+    <ul>
+      <li><strong>Evaluates your group from a photo:</strong> group size, mean point of impact and the offset in centimetres and clicks. The corner markers on the target keep the photo true to scale, even when taken at an angle.</li>
+      <li><strong>Detects flyers:</strong> such as the clean-bore shot after cleaning. You decide which hits count towards the group.</li>
+      <li><strong>Measures steadiness before the shot:</strong> the smartphone on the rifle uses its motion sensors to record how still the rifle was in the second before the shot. You see whether the spread comes from the rifle or from the shooter.</li>
+      <li><strong>Assesses the confirmation shot:</strong> after adjusting, Nullpunkt checks whether the shot lands inside the group circle around the target point.</li>
+      <li><strong>Saves setups:</strong> several rifles, scopes and loads, with history.</li>
+    </ul>
+    <h3>Who it is for</h3>
+    <p>For hunters before the season, after changing a mount or when the scope took a knock. For sport shooters and reloaders testing a new load. For anyone who doesn’t want to guess when zeroing.</p>
+    <h3>How it works</h3>
+    <ol>
+      <li>Create a setup: rifle, calibre, scope with click value, ammunition.</li>
+      <li>Print the target and attach the smartphone firmly to the rifle.</li>
+      <li>Record a rest reference: rifle on the rest, don’t touch anything.</li>
+      <li>Fire a group of 5 shots and photograph the hits.</li>
+      <li>Check for flyers, turn the correction on the scope.</li>
+      <li>Fire a confirmation shot and get it confirmed.</li>
+    </ol>
+    <p class="muted">Runs in the browser on iPhone and Android, no sign-up, no app store. All data stays on your device.</p>
+  </section>
+  <noscript>Nullpunkt needs JavaScript.</noscript>
+</body>
+</html>

@@ -3,6 +3,34 @@
 const n1 = (v, d = 1) => v.toLocaleString('de-DE', { maximumFractionDigits: d });
 
 export const T = {
+  locale: 'de-DE',
+  targetPdf: '/assets/zielscheibe-a4.pdf',
+  langSwitch: { de: 'Deutsch', en: 'English' },
+  misc: {
+    deletedSetup: 'Gelöschtes Setup',
+    shotDetected: (r) => `Schuss erkannt: ${r}`,
+    metrics: (w, j) => `Wanderung ${w} mrad · Ruck ${j}`,
+    manual: ' · manuell',
+    group: (n) => `Gruppe ${n}`,
+    mpiUnit: 'mm rechts / hoch',
+    perClick: 'je Klick',
+    optik: 'Optik',
+    muni: 'Munition',
+    lot: 'Los',
+    modeDry: 'Trockentraining',
+    modeLive: 'scharf',
+    groupRow: (s, h) => `${s} Schuss gemessen · ${h} Treffer`,
+    controlLabel: 'K',
+    nothing: 'nichts',
+    dir: { hoch: 'hoch', tief: 'tief', rechts: 'rechts', links: 'links' },
+  },
+  chart: { shot: 'Schuss', aria: 'Abstand vom Haltepunkt vor jedem Schuss' },
+  targetAria: 'Scheibe mit Treffern',
+  clickLabel: (einheit, v) =>
+    ({
+      mrad: { 0.1: '0,1 mrad (1 cm auf 100 m)', 0.05: '0,05 mrad (0,5 cm auf 100 m)', 0.2: '0,2 mrad (2 cm auf 100 m)' },
+      MOA: { 0.25: '1/4 MOA (ca. 0,73 cm auf 100 m)', 0.125: '1/8 MOA (ca. 0,36 cm auf 100 m)', 0.5: '1/2 MOA (ca. 1,45 cm auf 100 m)', 1: '1 MOA (ca. 2,9 cm auf 100 m)' },
+    })[einheit][v],
   app: { name: 'Nullpunkt', tagline: 'Büchse mit Zielfernrohr einschießen: Scheibenfoto, Klickkorrektur, Ruhemessung' },
   nav: { back: 'Zurück', next: 'Weiter', save: 'Speichern', cancel: 'Abbrechen', home: 'Übersicht' },
   safety: {
@@ -34,7 +62,8 @@ export const T = {
     waffe: { title: 'Welche Waffe schießt du ein?', name: 'Bezeichnung', namePh: 'z. B. Sauer 100 Jagd', typ: 'Waffentyp', kaliber: 'Kaliber', lauf: 'Lauflänge (cm)', drall: 'Drall', sd: 'Schalldämpfer' },
     optik: { title: 'Zielfernrohr', lead: 'Klickwert und Montagehöhe brauchen wir für die Korrektur.', modell: 'Modell', modellPh: 'z. B. 2,5–15×56', einheit: 'Verstellung', klick: 'Klickwert', hoehe: 'Montagehöhe (mm)' },
     muni: { title: 'Munition', lead: 'Gleiches Los wie später auf der Jagd oder im Wettkampf verwenden.', name: 'Laborierung', namePh: 'z. B. Match 168 gr HPBT', los: 'Los-Nr.', gewicht: 'Geschossgewicht (gr)', v0: 'v0 (m/s)' },
-    typen: ['Repetierbüchse', 'Selbstlader', 'Kipplaufbüchse', 'Kleinkaliber', 'Sonstige'],
+    typen: [['Repetierbüchse', 'Repetierbüchse'], ['Selbstlader', 'Selbstlader'], ['Kipplaufbüchse', 'Kipplaufbüchse'], ['Kleinkaliber', 'Kleinkaliber'], ['Sonstige', 'Sonstige']],
+    sdOptions: [['ja', 'ja'], ['nein', 'nein']],
   },
   prep: {
     title: 'Vorbereitung',
@@ -155,6 +184,7 @@ export const T = {
       unknown: 'Der Sensor zeigt keine Unruhe. Mögliche Ursachen: Wind, Auflage, Munition oder Wärme.',
     },
     sensorInGroup: (i, r) => `Treffer ${i}: Sensor meldet „${r}“, liegt aber in der Gruppe.`,
+    hit: (i) => `Treffer ${i}`,
     selTitle: 'Welche Treffer zählen zur Gruppe?',
     selHint: 'Tippe einen Treffer an, um ihn aus der Gruppe zu nehmen oder wieder aufzunehmen. Die Empfehlung rechnet nur mit den ausgewählten.',
     inGroup: 'zählt',

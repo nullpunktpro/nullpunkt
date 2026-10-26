@@ -1,3 +1,5 @@
+import { T } from './i18n.js';
+
 // Überlagerung: Abstand vom Haltepunkt vor dem Schuss, je Schuss eine Linie, Ruhemessung als graue Fläche.
 // x: Zeit bis zum Schuss (−1,5 s … 0), y: mrad (rechts in cm auf der gewählten Distanz).
 
@@ -21,7 +23,7 @@ export function aimChart({ shots = [], rest = null, distanceM = 100 }) {
       <text x="${L - 4}" y="${y(v) + 3}" text-anchor="end">${fmt(v)}</text>
       <text x="${W - R + 4}" y="${y(v) + 3}">${fmt(cm)} cm</text>`;
   }).join('');
-  const ticks = [-1500, -1000, -500, 0].map((t) => `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${t ? fmt(t / 1000) + ' s' : 'Schuss'}</text>`).join('');
+  const ticks = [-1500, -1000, -500, 0].map((t) => `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${t ? fmt(t / 1000) + ' s' : T.chart.shot}</text>`).join('');
 
   const restArea = rest?.length
     ? `<path d="${line(rest)}L${x(rest[rest.length - 1][0])} ${y(0)}L${x(rest[0][0])} ${y(0)}Z" class="ch-rest"/>`
@@ -34,12 +36,12 @@ export function aimChart({ shots = [], rest = null, distanceM = 100 }) {
     })
     .join('');
 
-  return `<svg viewBox="0 0 ${W} ${H}" class="aim-chart" role="img" aria-label="Abstand vom Haltepunkt vor jedem Schuss">
+  return `<svg viewBox="0 0 ${W} ${H}" class="aim-chart" role="img" aria-label="${T.chart.aria}">
     ${grid}${ticks}${restArea}${lines}
     <line x1="${x(0)}" x2="${x(0)}" y1="${TOP}" y2="${H - B}" class="ch-zero"/>
   </svg>`;
 }
 
 function fmt(v) {
-  return v.toLocaleString('de-DE', { maximumFractionDigits: v < 1 && v > 0 ? 2 : 1 });
+  return v.toLocaleString(T.locale, { maximumFractionDigits: v < 1 && v > 0 ? 2 : 1 });
 }
