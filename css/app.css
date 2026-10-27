@@ -257,11 +257,43 @@ details.raw summary { cursor: pointer; font-weight: 600; }
 .aim-chart .ch-label { stroke: none; font-weight: 700; }
 canvas#live + .step-hint, #restCount { font-weight: 600; color: var(--accent); }
 
+/* Wissensbereich */
+.kb main { padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px)); }
+.kb-title { font-size: 26px; margin-top: 4px; }
+.kb-search { position: sticky; top: 0; z-index: 4; background: var(--bg); padding: 6px 0; }
+.kb-search input { font: inherit; font-size: 16px; width: 100%; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.kb-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.kb-toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.kb-toc a { display: inline-block; font-size: 14px; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 99px; padding: 4px 10px; }
+.kb-toc a:hover, .kb-toc a:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+.kb-cat { display: flex; flex-direction: column; gap: 10px; }
+.kb-cat h2 { margin-top: 10px; }
+.kb-entry { scroll-margin-top: 70px; }
+.kb-entry p a, .prose a, .safety a, .hint a, .statement a, .muted a { color: var(--accent); text-underline-offset: 3px; }
+.kb-entry:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.kb-fig { margin: 0; }
+.kb-fig svg { width: 100%; height: auto; display: block; background: var(--bg); border-radius: 8px; }
+.kb-fig .f-line { stroke: var(--ink); stroke-width: 1.4; fill: none; }
+.kb-fig .f-thin { stroke: var(--muted); stroke-width: .8; fill: none; }
+.kb-fig .f-acc { stroke: var(--accent); stroke-width: 2; }
+.kb-fig .f-band { fill: var(--good); fill-opacity: .14; }
+.kb-fig .f-dot { fill: var(--ink); }
+.kb-fig .f-dot.acc { fill: var(--accent); }
+.kb-fig .f-body { fill: var(--surface); stroke: var(--ink); stroke-width: 1.4; }
+.kb-fig .f-body.acc { stroke: var(--accent); }
+.kb-fig text { font-family: var(--f-body); }
+.kb-fig .f-txt { font-size: 11px; fill: var(--ink); }
+.kb-fig .f-small { font-size: 9px; fill: var(--muted); }
+.kb-fig .b { font-weight: 700; }
+.kb-fig text.acc { fill: var(--accent); }
+[hidden] { display: none !important; }
+
 /* Infotext auf der Startseite (statisch im HTML, auch für Suchmaschinen) */
 .about { max-width: 520px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
 .about h2 { font-size: 19px; margin-top: 8px; }
 .about h3 { font-size: 16px; margin-top: 6px; }
 .about p, .about li { color: var(--ink); }
+.about a { color: var(--accent); text-underline-offset: 3px; }
 .about ul, .about ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .about .muted { color: var(--muted); }
 body[data-screen]:not([data-screen="home"]) .about { display: none; }

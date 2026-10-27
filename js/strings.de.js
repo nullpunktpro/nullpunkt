@@ -1,10 +1,13 @@
 // Alle Oberflächentexte an einer Stelle. Für weitere Sprachen eine Datei je Sprache anlegen.
 
 const n1 = (v, d = 1) => v.toLocaleString('de-DE', { maximumFractionDigits: d });
+// Verweis in den Wissensbereich, öffnet in neuem Tab, damit der laufende Ablauf erhalten bleibt
+const kb = (id, text) => `<a href="/wissen/#${id}" target="_blank" rel="noopener">${text}</a>`;
 
 export const T = {
   locale: 'de-DE',
   targetPdf: '/assets/zielscheibe-a4.pdf',
+  kbUrl: '/wissen/',
   langSwitch: { de: 'Deutsch', en: 'English' },
   misc: {
     deletedSetup: 'Gelöschtes Setup',
@@ -56,11 +59,11 @@ export const T = {
     noSessions: 'Noch keine Sitzung.',
     groups: (n) => `${n} ${n === 1 ? 'Gruppe' : 'Gruppen'}`,
   },
-  links: { target: 'Zielscheibe (PDF)', sensorTest: 'Sensortest', info: 'Hinweise & Daten', imprint: 'Impressum', privacy: 'Datenschutz' },
+  links: { target: 'Zielscheibe (PDF)', sensorTest: 'Sensortest', info: 'Hinweise & Daten', knowledge: 'Wissen', imprint: 'Impressum', privacy: 'Datenschutz' },
   wizard: {
     steps: ['Waffe', 'Optik', 'Munition'],
     waffe: { title: 'Welche Waffe schießt du ein?', name: 'Bezeichnung', namePh: 'z. B. Sauer 100 Jagd', typ: 'Waffentyp', kaliber: 'Kaliber', lauf: 'Lauflänge (cm)', drall: 'Drall', sd: 'Schalldämpfer' },
-    optik: { title: 'Zielfernrohr', lead: 'Klickwert und Montagehöhe brauchen wir für die Korrektur.', modell: 'Modell', modellPh: 'z. B. 2,5–15×56', einheit: 'Verstellung', klick: 'Klickwert', hoehe: 'Montagehöhe (mm)' },
+    optik: { title: 'Zielfernrohr', lead: `Klickwert und Montagehöhe brauchen wir für die Korrektur. ${kb('klickwert', 'Was ist der Klickwert?')}`, modell: 'Modell', modellPh: 'z. B. 2,5–15×56', einheit: 'Verstellung', klick: 'Klickwert', hoehe: 'Montagehöhe (mm)' },
     muni: { title: 'Munition', lead: 'Gleiches Los wie später auf der Jagd oder im Wettkampf verwenden.', name: 'Laborierung', namePh: 'z. B. Match 168 gr HPBT', los: 'Los-Nr.', gewicht: 'Geschossgewicht (gr)', v0: 'v0 (m/s)' },
     typen: [['Repetierbüchse', 'Repetierbüchse'], ['Selbstlader', 'Selbstlader'], ['Kipplaufbüchse', 'Kipplaufbüchse'], ['Kleinkaliber', 'Kleinkaliber'], ['Sonstige', 'Sonstige']],
     sdOptions: [['ja', 'ja'], ['nein', 'nein']],
@@ -72,6 +75,7 @@ export const T = {
     targetHint: 'Druck in „Tatsächliche Größe“ bzw. 100 %. Danach die 100-mm-Kontrolllinie nachmessen.',
     distance: 'Distanz (m)',
     aim: 'Gewünschte Treffpunktlage auf dieser Distanz',
+    aimHint: `${kb('gee', 'Was ist GEE?')} · ${kb('fleck', 'Fleck oder Hochschuss?')}`,
     aims: [[0, 'Fleck (Treffpunkt = Haltepunkt)'], [20, '2 cm hoch'], [30, '3 cm hoch'], [40, '4 cm hoch (GEE, typisch Jagd)'], [50, '5 cm hoch']],
     mode: 'Modus',
     modes: [['scharf', 'Scharfer Schuss'], ['trocken', 'Trockentraining (Pufferpatrone)']],
@@ -178,7 +182,7 @@ export const T = {
     outFew: 'Für die Ausreißerprüfung braucht es mindestens 3 Treffer.',
     outLine: (i, cm) => `Treffer ${i} liegt ${n1(cm)} cm neben den übrigen.`,
     why: {
-      first: (txt) => `Erster Schuss nach: ${txt}. Typisch für einen Ölschuss oder einen Lauf, der sich erst auf die Laborierung einschießt.`,
+      first: (txt) => `Erster Schuss nach: ${txt}. Typisch für einen ${kb('oelschuss', 'Ölschuss')} oder einen Lauf, der sich erst auf die Laborierung einschießt.`,
       sensor: (r) => `Der Sensor hat den Schuss als „${r}“ erfasst: wahrscheinlich ein Schützenfehler.`,
       change: 'Vor diesem Schuss wurde etwas verändert.',
       unknown: 'Der Sensor zeigt keine Unruhe. Mögliche Ursachen: Wind, Auflage, Munition oder Wärme.',
@@ -232,6 +236,8 @@ export const T = {
       '3. Auswertung: Nullpunkt markiert mögliche Ausreißer, du entscheidest, welche Treffer zählen. Daraus kommt die Empfehlung in Klicks und Zentimetern, auf Fleck oder GEE.',
       '4. Kontrollschuss: Nach dem Verstellen mindestens ein Schuss. Nullpunkt prüft, ob er im Streukreis liegt und ob die Waffe dabei so ruhig war wie in der Gruppe.',
     ],
+    knowledgeTitle: 'Wissen',
+    knowledge: `MOA, mrad, Bildebenen, Absehen, GEE, Wind, Drall und mehr: ${kb('einschiessen', 'zum Wissensbereich')}.`,
     measureTitle: 'So funktioniert die Messung',
     measure: [
       'Die vier schwarzen Eckmarken haben auf dem Papier einen festen Abstand von 170 mm. Aus ihrer Lage im Foto rechnet Nullpunkt das Bild gerade und in Millimeter um, auch bei schrägem Foto.',

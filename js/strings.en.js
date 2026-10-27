@@ -1,10 +1,12 @@
 // English UI strings. Same structure as strings.de.js.
 
 const n1 = (v, d = 1) => v.toLocaleString('en-GB', { maximumFractionDigits: d });
+const kb = (id, text) => `<a href="/en/knowledge/#${id}" target="_blank" rel="noopener">${text}</a>`;
 
 export const T = {
   locale: 'en-GB',
   targetPdf: '/assets/target-a4-en.pdf',
+  kbUrl: '/en/knowledge/',
   langSwitch: { de: 'Deutsch', en: 'English' },
   misc: {
     deletedSetup: 'Deleted setup',
@@ -56,11 +58,11 @@ export const T = {
     noSessions: 'No sessions yet.',
     groups: (n) => `${n} ${n === 1 ? 'group' : 'groups'}`,
   },
-  links: { target: 'Target (PDF)', sensorTest: 'Sensor test', info: 'Notes & data', imprint: 'Legal notice (German)', privacy: 'Privacy (German)' },
+  links: { target: 'Target (PDF)', sensorTest: 'Sensor test', info: 'Notes & data', knowledge: 'Knowledge', imprint: 'Legal notice (German)', privacy: 'Privacy (German)' },
   wizard: {
     steps: ['Rifle', 'Scope', 'Ammo'],
     waffe: { title: 'Which rifle are you zeroing?', name: 'Name', namePh: 'e.g. Sauer 100 Classic', typ: 'Type', kaliber: 'Calibre', lauf: 'Barrel length (cm)', drall: 'Twist', sd: 'Suppressor' },
-    optik: { title: 'Scope', lead: 'We need the click value and mounting height for the correction.', modell: 'Model', modellPh: 'e.g. 2.5–15×56', einheit: 'Adjustment', klick: 'Click value', hoehe: 'Mounting height (mm)' },
+    optik: { title: 'Scope', lead: `We need the click value and mounting height for the correction. ${kb('klickwert', 'What is the click value?')}`, modell: 'Model', modellPh: 'e.g. 2.5–15×56', einheit: 'Adjustment', klick: 'Click value', hoehe: 'Mounting height (mm)' },
     muni: { title: 'Ammunition', lead: 'Use the same lot you will later hunt or compete with.', name: 'Load', namePh: 'e.g. Match 168 gr HPBT', los: 'Lot no.', gewicht: 'Bullet weight (gr)', v0: 'Muzzle velocity (m/s)' },
     typen: [['Repetierbüchse', 'Bolt-action rifle'], ['Selbstlader', 'Semi-automatic rifle'], ['Kipplaufbüchse', 'Break-action rifle'], ['Kleinkaliber', 'Rimfire'], ['Sonstige', 'Other']],
     sdOptions: [['ja', 'yes'], ['nein', 'no']],
@@ -72,6 +74,7 @@ export const T = {
     targetHint: 'Print at “Actual size” or 100 %. Then measure the 100 mm check line.',
     distance: 'Distance (m)',
     aim: 'Desired point of impact at this distance',
+    aimHint: `${kb('gee', 'What is a hunting zero?')} · ${kb('fleck', 'Dead on or high?')}`,
     aims: [[0, 'Dead on (impact = aim)'], [20, '2 cm high'], [30, '3 cm high'], [40, '4 cm high (typical hunting zero)'], [50, '5 cm high']],
     mode: 'Mode',
     modes: [['scharf', 'Live fire'], ['trocken', 'Dry fire (snap cap)']],
@@ -178,7 +181,7 @@ export const T = {
     outFew: 'Checking for flyers needs at least 3 hits.',
     outLine: (i, cm) => `Hit ${i} is ${n1(cm)} cm away from the others.`,
     why: {
-      first: (txt) => `First shot after: ${txt}. Typical for a clean-bore shot or a barrel that is still settling on the load.`,
+      first: (txt) => `First shot after: ${txt}. Typical for a ${kb('oelschuss', 'clean-bore shot')} or a barrel that is still settling on the load.`,
       sensor: (r) => `The sensor recorded the shot as “${r}”: probably a shooter error.`,
       change: 'Something was changed before this shot.',
       unknown: 'The sensor shows no movement. Possible causes: wind, rest, ammunition or heat.',
@@ -232,6 +235,8 @@ export const T = {
       '3. Evaluation: Nullpunkt marks possible flyers, you decide which hits count. That gives the recommendation in clicks and centimetres, dead on or with a hunting zero.',
       '4. Confirmation shot: after adjusting, at least one shot. Nullpunkt checks whether it lands inside the group circle and whether the rifle was as steady as during the group.',
     ],
+    knowledgeTitle: 'Knowledge',
+    knowledge: `MOA, mrad, focal planes, reticles, zero range, wind, twist and more: ${kb('einschiessen', 'open the knowledge section')}.`,
     measureTitle: 'How the measurement works',
     measure: [
       'The four black corner markers are a fixed 170 mm apart on the paper. From their position in the photo, Nullpunkt straightens the image and converts it to millimetres, even if the photo is taken at an angle.',

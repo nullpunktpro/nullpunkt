@@ -246,6 +246,7 @@ function screenHome() {
     <nav class="links">
       <a href="${T.targetPdf}" target="_blank" rel="noopener">${T.links.target}</a>
       <button class="link" data-act="sensorTest"${locked ? ' disabled' : ''}>${T.links.sensorTest}</button>
+      <a href="${T.kbUrl}">${T.links.knowledge}</a>
       <button class="link" data-act="info">${T.links.info}</button>
       <a href="/impressum.html">${T.links.imprint}</a>
       <a href="/datenschutz.html">${T.links.privacy}</a>
@@ -296,7 +297,7 @@ function screenPrep() {
       <a class="btn" href="${T.targetPdf}" target="_blank" rel="noopener">${P.target}</a>
       <p class="hint">${P.targetHint}</p>
       ${st.sensorTestOnly ? '' : field('prep', 'distance', P.distance, { options: [25, 50, 100, 150, 200, 300], num: true })}
-      ${st.sensorTestOnly ? '' : field('prep', 'aim', P.aim, { options: P.aims, num: true })}
+      ${st.sensorTestOnly ? '' : `${field('prep', 'aim', P.aim, { options: P.aims, num: true })}<p class="muted small">${P.aimHint}</p>`}
       ${field('prep', 'mode', P.mode, { options: P.modes })}
       ${check('prep', 'mic', P.mic)}
     </section>
@@ -679,6 +680,8 @@ function screenInfo() {
     <section class="card prose">
       <h2>${I.howTitle}</h2>
       ${I.how.map((p) => `<p>${p}</p>`).join('')}
+      <h2>${I.knowledgeTitle}</h2>
+      <p>${I.knowledge}</p>
       <h2>${I.measureTitle}</h2>
       ${I.measure.map((p) => `<p>${p}</p>`).join('')}
       <h2>${I.installTitle}</h2>

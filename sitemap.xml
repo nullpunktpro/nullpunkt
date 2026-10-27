@@ -10,4 +10,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://nullpunkt.pro/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/"/>
   </url>
+  <url>
+    <loc>https://nullpunkt.pro/wissen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nullpunkt.pro/wissen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/knowledge/"/>
+  </url>
+  <url>
+    <loc>https://nullpunkt.pro/en/knowledge/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nullpunkt.pro/wissen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/knowledge/"/>
+  </url>
 </urlset>

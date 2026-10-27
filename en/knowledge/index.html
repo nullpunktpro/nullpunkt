@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zeroing knowledge: MOA, mrad, focal planes, reticles, zero range, twist | Nullpunkt</title>
+  <meta name="description" content="Zeroing from A to Z: clean-bore shot, MOA and mrad with drawing, click value, first and second focal plane, reticles, optimal zero, wind, air density, barrel and twist – short and clear.">
+  <link rel="canonical" href="https://nullpunkt.pro/en/knowledge/">
+  <link rel="alternate" hreflang="de" href="https://nullpunkt.pro/wissen/">
+  <link rel="alternate" hreflang="en" href="https://nullpunkt.pro/en/knowledge/">
+  <meta name="theme-color" content="#121614">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nullpunkt.pro/en/knowledge/">
+  <meta property="og:title" content="Zeroing knowledge – Nullpunkt">
+  <meta property="og:description" content="Zeroing from A to Z: clean-bore shot, MOA and mrad with drawing, click value, first and second focal plane, reticles, optimal zero, wind, air density, barrel and twist – short and clear.">
+  <meta property="og:image" content="https://nullpunkt.pro/assets/icon-512.png">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icon-180.png">
+  <link rel="stylesheet" href="/css/app.css">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "DefinedTermSet",
+ "name": "Zeroing knowledge",
+ "inLanguage": "en",
+ "url": "https://nullpunkt.pro/en/knowledge/",
+ "hasDefinedTerm": [
+  {
+   "@type": "DefinedTerm",
+   "name": "Zeroing",
+   "description": "Zeroing means adjusting the scope so the rifle hits where you aim – dead on or with a hunting zero. Procedure: shoot a group, find the mean point of impact, turn the correction in clicks, fire a confirmation shot. Always use the ammunition, suppressor and rest you will later shoot with.",
+   "url": "https://nullpunkt.pro/en/knowledge/#einschiessen"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Point of aim and point of impact",
+   "description": "The point of aim is where the reticle points at the shot, the point of impact is where the bullet lands. When zeroing you always aim at the same spot, usually the centre of the crosshair on the target. The offset between point of aim and mean point of impact is what you correct.",
+   "url": "https://nullpunkt.pro/en/knowledge/#haltepunkt"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Dead-on and high zero",
+   "description": "Dead on means point of impact equals point of aim at the zeroing distance. A high zero means the rifle deliberately hits a little high, typically 4 cm at 100 m. The trajectory then stays within the vital zone over a longer range, see optimal zero range.",
+   "url": "https://nullpunkt.pro/en/knowledge/#fleck"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Optimal zero range (GEE)",
+   "description": "The German “GEE” is the distance at which a rifle hits dead on when the trajectory never rises more than 4 cm above the line of sight on the way. In practice you zero 4 cm high at 100 m; with common hunting calibres the zero is then roughly at 150 to 200 m. Up to a little beyond that the hit stays within ±4 cm, so you can shoot without holdover. How far exactly depends on muzzle velocity, BC and sight height.",
+   "url": "https://nullpunkt.pro/en/knowledge/#gee"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Group",
+   "description": "Several shots with the same point of aim and unchanged settings. A single shot says little because every rifle disperses. Three shots are the minimum, five are much more meaningful. Let the barrel cool between groups, see barrel heat.",
+   "url": "https://nullpunkt.pro/en/knowledge/#gruppe"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Group size",
+   "description": "The largest distance between two hits of a group, measured centre to centre. It describes the precision of rifle, ammunition and shooter together. Expressed as an angle (MOA or mrad) groups at different distances can be compared.",
+   "url": "https://nullpunkt.pro/en/knowledge/#streukreis"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Mean point of impact",
+   "description": "The centre of all hits of a group. You always correct towards it, never towards a single shot. Its offset from the target point in centimetres, divided by the click value at that distance, gives the number of clicks.",
+   "url": "https://nullpunkt.pro/en/knowledge/#mpi"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Flyer",
+   "description": "A hit that lies clearly outside the others. Typical causes: clean-bore shot, jerking the trigger, a gust of wind, the rifle touching the rest. A flyer with a known cause should not go into the correction; if flyers keep happening, the problem lies with rifle, mount or ammunition.",
+   "url": "https://nullpunkt.pro/en/knowledge/#ausreisser"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Confirmation shot",
+   "description": "A shot after adjusting to confirm the correction. It should land inside the group size around the new target point. If it is far off although the rifle was steady, check turning direction, click value and mount.",
+   "url": "https://nullpunkt.pro/en/knowledge/#kontrollschuss"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Clean-bore shot and cold bore",
+   "description": "The first shot from a freshly cleaned or oiled barrel often hits differently from the following ones: oil residue and bare steel change friction and gas pressure. So dry the bore after cleaning and fire one or two fouling shots that don’t count before zeroing. Related is the cold-bore shot: the first shot from a cold barrel. For hunting this is exactly the one that matters – check now and then where the first shot of the day lands.",
+   "url": "https://nullpunkt.pro/en/knowledge/#oelschuss"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Parts of a riflescope",
+   "description": "At the front the objective, at the back the eyepiece with diopter adjustment, in between the main tube (usually 30 or 34 mm) with the turrets: elevation on top, windage on the right, parallax on the left on many models. The magnification ring sets the zoom. Where the reticle sits in the optical path decides the focal plane.",
+   "url": "https://nullpunkt.pro/en/knowledge/#zielfernrohr"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "MOA – minute of angle",
+   "description": "A minute of angle is 1/60 of a degree. At 100 m that is 2.91 cm, at 200 m 5.82 cm – the size grows with distance. Scopes with MOA adjustment usually have 1/4 MOA per click, about 0.73 cm at 100 m. Some makers use “inch per 100 yards” (2.78 cm at 100 m), slightly less than a true MOA.",
+   "url": "https://nullpunkt.pro/en/knowledge/#moa"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "mrad – milliradian",
+   "description": "One thousandth of a radian. At 100 m that is 10 cm, at 300 m 30 cm. With 0.1 mrad per click one click moves 1 cm at 100 m – easy mental maths. 1 mrad equals 3.44 MOA. What matters is that reticle and turrets use the same unit.",
+   "url": "https://nullpunkt.pro/en/knowledge/#mrad"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Click value",
+   "description": "How far one click on the turret moves the point of impact, as an angle. Common are 0.1 mrad (1 cm at 100 m) or 1/4 MOA (0.73 cm at 100 m). Formula: clicks = offset in cm ÷ (click value in cm at 100 m × distance ÷ 100). Example: 6 cm low at 100 m with 0.1 mrad → 6 clicks up.",
+   "url": "https://nullpunkt.pro/en/knowledge/#klickwert"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Turrets, direction and zero reset",
+   "description": "The elevation turret moves the point of impact up or down, the windage turret right or left. The arrows (U/Up, R) show which way the point of impact moves. After zeroing, many turrets let you reset the scale to zero without changing the setting. A zero stop prevents turning below the zeroed value.",
+   "url": "https://nullpunkt.pro/en/knowledge/#tuerme"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "First and second focal plane",
+   "description": "In the first focal plane (FFP) the reticle grows with magnification, so its spacings (e.g. 1 mrad between dots) are correct at every magnification. In the second focal plane (SFP) the reticle always stays the same size while the target grows; spacings are only correct at one magnification, usually the highest. For driven hunts many prefer SFP because the reticle stays clearly visible at low magnification.",
+   "url": "https://nullpunkt.pro/en/knowledge/#bildebenen"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Reticle",
+   "description": "The aiming mark in the scope. Common in German-speaking countries is the No. 4 reticle: three thick posts and a fine crosshair in the centre. An illuminated dot helps at dusk. Reticles with mrad or MOA marks (e.g. Mil-Dot) allow holdover and range estimation, provided focal plane and magnification match.",
+   "url": "https://nullpunkt.pro/en/knowledge/#absehen"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Parallax",
+   "description": "If the target image and the reticle are not in the same plane, the reticle moves on the target when you move your head. Hunting scopes are usually parallax-free at 100 m. At other distances a parallax adjustment helps, or a consistent head position with the eye centred behind the eyepiece.",
+   "url": "https://nullpunkt.pro/en/knowledge/#parallaxe"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Eye relief",
+   "description": "The distance between eyepiece and eye at which the image is fully lit, usually 8 to 10 cm. If it is too short, recoil can cut the eyebrow (“scope bite”). Mount the scope so that in shooting position you get a full, shadow-free image without straining your neck.",
+   "url": "https://nullpunkt.pro/en/knowledge/#augenabstand"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Mount and sight height",
+   "description": "The mount connects scope and rifle. Tighten screws to the torque the maker specifies – too loose and the point of impact wanders, too tight and the tube can suffer. Sight height is the distance between bore axis and scope centre. It decides how the trajectory crosses the line of sight and belongs in every ballistic calculator.",
+   "url": "https://nullpunkt.pro/en/knowledge/#montage"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Muzzle velocity",
+   "description": "The speed of the bullet at the muzzle in m/s. It depends on the load, barrel length and powder temperature. Higher velocity means a flatter trajectory and less wind drift. Factory figures apply to a test barrel; your own barrel can differ noticeably.",
+   "url": "https://nullpunkt.pro/en/knowledge/#v0"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Ballistic coefficient (BC)",
+   "description": "A measure of how well a bullet overcomes air resistance. The higher the BC, the slower the bullet loses speed, the flatter the trajectory and the less wind drift. Values are given for different models (G1, G7); only compare values of the same model.",
+   "url": "https://nullpunkt.pro/en/knowledge/#bc"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Air density and the ideal gas law",
+   "description": "Air resistance depends on air density. By the ideal gas law ρ = p ÷ (Rs · T) with Rs = 287 J/(kg·K) for dry air. At 15 °C and 1013 hPa that is 1.225 kg/m³. Warmer or higher up means thinner air: about 5 % less at 30 °C, about 10 % less at 1000 m altitude. The bullet slows down less and hits higher at long range. At 100 m this hardly matters, from about 300 m it does.",
+   "url": "https://nullpunkt.pro/en/knowledge/#gasgesetz"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Powder temperature",
+   "description": "Warm powder burns faster, raising pressure and muzzle velocity. Depending on the powder, velocity changes by roughly 0.5 to 1.5 m/s per degree. If you zero in summer and hunt in winter, check before the season. Don’t leave cartridges in direct sun or on a hot barrel.",
+   "url": "https://nullpunkt.pro/en/knowledge/#temperatur"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Wind",
+   "description": "Crosswind pushes the bullet sideways. What matters is not the flight time but the delay compared with flight in a vacuum: drift ≈ wind speed × (flight time − distance ÷ muzzle velocity). Example .308 Win at about 820 m/s with 3 m/s full-value wind: roughly 1.5 cm at 100 m, roughly 13 cm at 300 m. With the clock method, wind from 3 or 9 o’clock is full value, from 1, 5, 7 and 11 o’clock about half, from 2, 4, 8 and 10 o’clock almost full. Choose a calm day for zeroing.",
+   "url": "https://nullpunkt.pro/en/knowledge/#wind"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Uphill and downhill",
+   "description": "When shooting steeply up or down, gravity only acts over the horizontal distance. The bullet therefore hits higher than the measured slant range suggests. Rule of thumb: use the horizontal distance (slant range × cos angle). At 30° that is 87 %.",
+   "url": "https://nullpunkt.pro/en/knowledge/#schraeg"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Barrel and barrel harmonics",
+   "description": "When firing, the barrel whips like a lash. Where it is in that motion when the bullet leaves the muzzle decides the point of impact. Anything that changes the vibration shifts the point of impact: a different load, a suppressor, pressure on the barrel, extra weight. A free-floating barrel doesn’t touch the stock and shoots more consistently. That is also why the smartphone never goes on the barrel.",
+   "url": "https://nullpunkt.pro/en/knowledge/#lauf"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Barrel heat and mirage",
+   "description": "With every shot the barrel gets warmer; many barrels shift their point of impact as they heat up. Hot air above the barrel shimmers and distorts the image. Let the barrel cool between groups until it only feels lukewarm to the touch. With thin hunting barrels this happens sooner than you think.",
+   "url": "https://nullpunkt.pro/en/knowledge/#laufwaerme"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Twist",
+   "description": "The rifling spins the bullet and stabilises it. The twist rate states the distance over which the bullet makes one full turn, e.g. 1:11″ = one turn in 11 inches (279 mm). Long, heavy bullets need a faster (shorter) twist; an old rule of thumb for this is the Greenhill formula. With right-hand twist the bullet drifts slightly right at long range (spin drift) – at 100 m only millimetres.",
+   "url": "https://nullpunkt.pro/en/knowledge/#drall"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Barrel length",
+   "description": "A longer barrel gives the powder more time to accelerate the bullet: more muzzle velocity, a slightly flatter trajectory. How much depends strongly on the calibre – little for short cartridges, more for magnums. Shorter barrels are handier and popular with a suppressor.",
+   "url": "https://nullpunkt.pro/en/knowledge/#lauflaenge"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Suppressor",
+   "description": "A suppressor changes weight and vibration at the end of the barrel and so usually the point of impact, often by several centimetres. Always zero in the configuration you hunt with, and check again after removing and refitting it.",
+   "url": "https://nullpunkt.pro/en/knowledge/#schalldaempfer"
+  },
+  {
+   "@type": "DefinedTerm",
+   "name": "Load and lot",
+   "description": "The load is the exact make-up of a cartridge: bullet, weight, powder, charge. Every load has its own point of impact, so re-zero after a change. A lot is a production batch; even lots of the same cartridge can differ slightly. If you want to be precise, buy a season’s ammunition from one lot.",
+   "url": "https://nullpunkt.pro/en/knowledge/#laborierung"
+  }
+ ]
+}
+  </script>
+</head>
+<body class="kb">
+<main>
+  <header class="bar-top"><a class="btn ghost small" href="/en/">← To the app</a><a class="link" href="https://nullpunkt.pro/wissen/" hreflang="de">Deutsch</a></header>
+  <header class="top" id="top">
+    <h1 class="brand">Null<span>punkt</span></h1>
+    <h2 class="kb-title">Zeroing knowledge</h2>
+    <p class="muted">The key terms around riflescopes, ballistics and barrels – explained briefly, with drawings. Tap a term or search.</p>
+  </header>
+  <div class="kb-search">
+    <input type="search" id="kbq" placeholder="Search a term …" aria-label="Search a term …" autocomplete="off">
+  </div>
+  <nav class="card kb-toc" aria-label="All terms"><p class="label">All terms</p><ul><li><a href="#gasgesetz" data-term="air density and the ideal gas law">Air density and the ideal gas law</a></li><li><a href="#bc" data-term="ballistic coefficient (bc)">Ballistic coefficient (BC)</a></li><li><a href="#lauf" data-term="barrel and barrel harmonics">Barrel and barrel harmonics</a></li><li><a href="#laufwaerme" data-term="barrel heat and mirage">Barrel heat and mirage</a></li><li><a href="#lauflaenge" data-term="barrel length">Barrel length</a></li><li><a href="#oelschuss" data-term="clean-bore shot and cold bore">Clean-bore shot and cold bore</a></li><li><a href="#klickwert" data-term="click value">Click value</a></li><li><a href="#kontrollschuss" data-term="confirmation shot">Confirmation shot</a></li><li><a href="#fleck" data-term="dead-on and high zero">Dead-on and high zero</a></li><li><a href="#augenabstand" data-term="eye relief">Eye relief</a></li><li><a href="#bildebenen" data-term="first and second focal plane">First and second focal plane</a></li><li><a href="#ausreisser" data-term="flyer">Flyer</a></li><li><a href="#gruppe" data-term="group">Group</a></li><li><a href="#streukreis" data-term="group size">Group size</a></li><li><a href="#laborierung" data-term="load and lot">Load and lot</a></li><li><a href="#mpi" data-term="mean point of impact">Mean point of impact</a></li><li><a href="#moa" data-term="moa – minute of angle">MOA – minute of angle</a></li><li><a href="#montage" data-term="mount and sight height">Mount and sight height</a></li><li><a href="#mrad" data-term="mrad – milliradian">mrad – milliradian</a></li><li><a href="#v0" data-term="muzzle velocity">Muzzle velocity</a></li><li><a href="#gee" data-term="optimal zero range (gee)">Optimal zero range (GEE)</a></li><li><a href="#parallaxe" data-term="parallax">Parallax</a></li><li><a href="#zielfernrohr" data-term="parts of a riflescope">Parts of a riflescope</a></li><li><a href="#haltepunkt" data-term="point of aim and point of impact">Point of aim and point of impact</a></li><li><a href="#temperatur" data-term="powder temperature">Powder temperature</a></li><li><a href="#absehen" data-term="reticle">Reticle</a></li><li><a href="#schalldaempfer" data-term="suppressor">Suppressor</a></li><li><a href="#tuerme" data-term="turrets, direction and zero reset">Turrets, direction and zero reset</a></li><li><a href="#drall" data-term="twist">Twist</a></li><li><a href="#schraeg" data-term="uphill and downhill">Uphill and downhill</a></li><li><a href="#wind" data-term="wind">Wind</a></li><li><a href="#einschiessen" data-term="zeroing">Zeroing</a></li></ul></nav>
+  <p class="muted" id="kbnone" hidden>No term found.</p>
+  <section class="kb-cat" data-cat="grund"><h2>Zeroing</h2><article class="card kb-entry" id="einschiessen" data-search="zeroing zeroing means adjusting the scope so the rifle hits where you aim – dead on or with a hunting zero. procedure: shoot a group, find the mean point of impact, turn the correction in clicks, fire a confirmation shot. always use the ammunition, suppressor and rest you will later shoot with."><h3>Zeroing</h3><p>Zeroing means adjusting the <a href="#zielfernrohr">scope</a> so the rifle hits where you aim – <a href="#fleck">dead on</a> or with a <a href="#gee">hunting zero</a>. Procedure: shoot a <a href="#gruppe">group</a>, find the <a href="#mpi">mean point of impact</a>, turn the correction in clicks, fire a <a href="#kontrollschuss">confirmation shot</a>. Always use the ammunition, <a href="#schalldaempfer">suppressor</a> and rest you will later shoot with.</p></article><article class="card kb-entry" id="haltepunkt" data-search="point of aim and point of impact the point of aim is where the reticle points at the shot, the point of impact is where the bullet lands. when zeroing you always aim at the same spot, usually the centre of the crosshair on the target. the offset between point of aim and mean point of impact is what you correct."><h3>Point of aim and point of impact</h3><p>The <b>point of aim</b> is where the reticle points at the shot, the <b>point of impact</b> is where the bullet lands. When zeroing you always aim at the same spot, usually the centre of the crosshair on the target. The offset between point of aim and <a href="#mpi">mean point of impact</a> is what you correct.</p></article><article class="card kb-entry" id="fleck" data-search="dead-on and high zero dead on means point of impact equals point of aim at the zeroing distance. a high zero means the rifle deliberately hits a little high, typically 4 cm at 100 m. the trajectory then stays within the vital zone over a longer range, see optimal zero range."><h3>Dead-on and high zero</h3><p><b>Dead on</b> means point of impact equals point of aim at the zeroing distance. A <b>high zero</b> means the rifle deliberately hits a little high, typically 4 cm at 100 m. The trajectory then stays within the vital zone over a longer range, see <a href="#gee">optimal zero range</a>.</p></article><article class="card kb-entry" id="gee" data-search="optimal zero range (gee) the german “gee” is the distance at which a rifle hits dead on when the trajectory never rises more than 4 cm above the line of sight on the way. in practice you zero 4 cm high at 100 m; with common hunting calibres the zero is then roughly at 150 to 200 m. up to a little beyond that the hit stays within ±4 cm, so you can shoot without holdover. how far exactly depends on muzzle velocity, bc and sight height."><h3>Optimal zero range (GEE)</h3><p>The German “GEE” is the distance at which a rifle hits dead on when the trajectory never rises more than 4 cm above the line of sight on the way. In practice you zero 4 cm high at 100 m; with common hunting calibres the zero is then roughly at 150 to 200 m. Up to a little beyond that the hit stays within ±4 cm, so you can shoot without holdover. How far exactly depends on <a href="#v0">muzzle velocity</a>, <a href="#bc">BC</a> and <a href="#montage">sight height</a>.</p><figure class="kb-fig"><svg viewBox="0 0 340 150" role="img" aria-label="Trajectory zeroed 4 cm high at 100 m with optimal zero range">
+  <rect x="30.0" y="44.0" width="285.0" height="36.0" class="f-band"/>
+  <line x1="30.0" y1="62.0" x2="315.0" y2="62.0" class="f-line" stroke-dasharray="4 3"/>
+  <polyline points="30.0,82.2 35.7,78.7 41.4,75.4 47.1,72.2 52.8,69.2 58.5,66.4 64.2,63.7 69.9,61.2 75.6,58.9 81.3,56.7 87.0,54.7 92.7,52.9 98.4,51.2 104.1,49.7 109.8,48.4 115.5,47.2 121.2,46.2 126.9,45.4 132.6,44.8 138.3,44.3 144.0,44.0 149.7,43.9 155.4,43.9 161.1,44.1 166.8,44.5 172.5,45.0 178.2,45.7 183.9,46.6 189.6,47.6 195.3,48.8 201.0,50.2 206.7,51.7 212.4,53.4 218.1,55.3 223.8,57.4 229.5,59.6 235.2,62.0 240.9,64.6 246.6,67.3 252.3,70.2 258.0,73.2 263.7,76.5 269.4,79.9 275.1,83.5 280.8,87.2 286.5,91.1 292.2,95.2 297.9,99.4 303.6,103.8 309.3,108.4 315.0,113.2" class="f-acc" fill="none"/>
+  <text x="32.0" y="58.0" class="f-small">Line of sight</text>
+  <text x="315.0" y="40.0" class="f-small" text-anchor="end">± 4 cm</text>
+  <circle cx="144.0" cy="44.0" r="2.5" class="f-dot"/>
+  <text x="144.0" y="36.0" class="f-txt" text-anchor="middle">+4 cm at 100 m</text>
+  <circle cx="67.62" cy="62.0" r="2.5" class="f-dot"/>
+  <text x="71.62" y="75.0" class="f-small">near zero</text>
+  <circle cx="235.2" cy="62.0" r="3" class="f-dot acc"/>
+  <text x="241.2" y="56.0" class="f-txt acc">zero ≈ 180 m</text>
+  <circle cx="269.4" cy="80.0" r="2.5" class="f-dot"/>
+  <text x="263.4" y="93.0" class="f-small" text-anchor="end">−4 cm at ≈ 210 m</text>
+  <text x="30.0" y="128" class="f-small" text-anchor="middle">0 m</text><text x="144.0" y="128" class="f-small" text-anchor="middle">100 m</text><text x="258.0" y="128" class="f-small" text-anchor="middle">200 m</text>
+  <text x="170" y="144" class="f-small" text-anchor="middle">example, schematic – real values depend on calibre and load</text>
+</svg></figure></article><article class="card kb-entry" id="gruppe" data-search="group several shots with the same point of aim and unchanged settings. a single shot says little because every rifle disperses. three shots are the minimum, five are much more meaningful. let the barrel cool between groups, see barrel heat."><h3>Group</h3><p>Several shots with the same <a href="#haltepunkt">point of aim</a> and unchanged settings. A single shot says little because every rifle disperses. Three shots are the minimum, five are much more meaningful. Let the barrel cool between groups, see <a href="#laufwaerme">barrel heat</a>.</p></article><article class="card kb-entry" id="streukreis" data-search="group size the largest distance between two hits of a group, measured centre to centre. it describes the precision of rifle, ammunition and shooter together. expressed as an angle (moa or mrad) groups at different distances can be compared."><h3>Group size</h3><p>The largest distance between two hits of a <a href="#gruppe">group</a>, measured centre to centre. It describes the precision of rifle, ammunition and shooter together. Expressed as an angle (<a href="#moa">MOA</a> or <a href="#mrad">mrad</a>) groups at different distances can be compared.</p><figure class="kb-fig"><svg viewBox="0 0 340 160" role="img" aria-label="Group size and mean point of impact">
+  <rect x="50" y="8" width="190" height="144" rx="6" fill="#f4f1e8"/>
+  <circle cx="145" cy="75" r="11" fill="#151515"/><circle cx="187" cy="57" r="11" fill="#151515"/><circle cx="163" cy="111" r="11" fill="#151515"/><circle cx="121" cy="93" r="11" fill="#151515"/><circle cx="133" cy="45" r="11" fill="#151515"/>
+  <line x1="187" y1="57" x2="121" y2="93" stroke="#e0301e" stroke-width="2"/>
+  <g stroke="#b8860b" stroke-width="2.5"><line x1="139.8" y1="76.2" x2="159.8" y2="76.2"/><line x1="149.8" y1="66.2" x2="149.8" y2="86.2"/></g>
+  <text x="248" y="60" class="f-txt b" fill="#e0301e">Group size</text>
+  <text x="248" y="74" class="f-small">centre to centre</text>
+  <text x="248" y="104" class="f-txt b acc">Point of impact</text>
+  <text x="248" y="118" class="f-small">mean of all hits</text>
+</svg></figure></article><article class="card kb-entry" id="mpi" data-search="mean point of impact the centre of all hits of a group. you always correct towards it, never towards a single shot. its offset from the target point in centimetres, divided by the click value at that distance, gives the number of clicks."><h3>Mean point of impact</h3><p>The centre of all hits of a <a href="#gruppe">group</a>. You always correct towards it, never towards a single shot. Its offset from the target point in centimetres, divided by the <a href="#klickwert">click value</a> at that distance, gives the number of clicks.</p></article><article class="card kb-entry" id="ausreisser" data-search="flyer a hit that lies clearly outside the others. typical causes: clean-bore shot, jerking the trigger, a gust of wind, the rifle touching the rest. a flyer with a known cause should not go into the correction; if flyers keep happening, the problem lies with rifle, mount or ammunition."><h3>Flyer</h3><p>A hit that lies clearly outside the others. Typical causes: <a href="#oelschuss">clean-bore shot</a>, jerking the trigger, a gust of wind, the rifle touching the rest. A flyer with a known cause should not go into the correction; if flyers keep happening, the problem lies with rifle, mount or ammunition.</p></article><article class="card kb-entry" id="kontrollschuss" data-search="confirmation shot a shot after adjusting to confirm the correction. it should land inside the group size around the new target point. if it is far off although the rifle was steady, check turning direction, click value and mount."><h3>Confirmation shot</h3><p>A shot after adjusting to confirm the correction. It should land inside the <a href="#streukreis">group size</a> around the new target point. If it is far off although the rifle was steady, check turning direction, <a href="#klickwert">click value</a> and <a href="#montage">mount</a>.</p></article><article class="card kb-entry" id="oelschuss" data-search="clean-bore shot and cold bore the first shot from a freshly cleaned or oiled barrel often hits differently from the following ones: oil residue and bare steel change friction and gas pressure. so dry the bore after cleaning and fire one or two fouling shots that don’t count before zeroing. related is the cold-bore shot: the first shot from a cold barrel. for hunting this is exactly the one that matters – check now and then where the first shot of the day lands."><h3>Clean-bore shot and cold bore</h3><p>The first shot from a freshly cleaned or oiled barrel often hits differently from the following ones: oil residue and bare steel change friction and gas pressure. So dry the bore after cleaning and fire one or two fouling shots that don’t count before zeroing. Related is the <b>cold-bore shot</b>: the first shot from a cold barrel. For hunting this is exactly the one that matters – check now and then where the first shot of the day lands.</p></article></section><section class="kb-cat" data-cat="zf"><h2>Riflescope</h2><article class="card kb-entry" id="zielfernrohr" data-search="parts of a riflescope at the front the objective, at the back the eyepiece with diopter adjustment, in between the main tube (usually 30 or 34 mm) with the turrets: elevation on top, windage on the right, parallax on the left on many models. the magnification ring sets the zoom. where the reticle sits in the optical path decides the focal plane."><h3>Parts of a riflescope</h3><p>At the front the objective, at the back the eyepiece with diopter adjustment, in between the main tube (usually 30 or 34 mm) with the <a href="#tuerme">turrets</a>: elevation on top, windage on the right, <a href="#parallaxe">parallax</a> on the left on many models. The magnification ring sets the zoom. Where the <a href="#absehen">reticle</a> sits in the optical path decides the <a href="#bildebenen">focal plane</a>.</p><figure class="kb-fig"><svg viewBox="0 0 340 150" role="img" aria-label="Parts of a riflescope">
+  <path d="M20 58 L70 50 L70 100 L20 92 Z" class="f-body"/>
+  <rect x="70" y="64" width="190" height="22" class="f-body"/>
+  <path d="M260 60 L300 56 L320 56 L320 94 L300 94 L260 90 Z" class="f-body"/>
+  <rect x="148" y="40" width="26" height="24" rx="3" class="f-body acc"/>
+  <circle cx="161" cy="75" r="10" class="f-body acc"/>
+  <circle cx="118" cy="75" r="8" class="f-body"/>
+  <rect x="268" y="58" width="16" height="34" class="f-body"/>
+  <line x1="300" y1="56" x2="300" y2="94" class="f-line"/>
+  <path d="M161 40 V24" class="f-thin"/><text x="161" y="18" class="f-txt acc" text-anchor="middle">Elevation</text>
+  <path d="M161 85 V118" class="f-thin"/><text x="161" y="130" class="f-txt acc" text-anchor="middle">Windage</text>
+  <path d="M118 83 L100 118" class="f-thin"/><text x="96" y="130" class="f-small" text-anchor="middle">Parallax</text>
+  <path d="M45 92 V118" class="f-thin"/><text x="45" y="130" class="f-small" text-anchor="middle">Objective</text>
+  <path d="M276 58 V34" class="f-thin"/><text x="276" y="28" class="f-small" text-anchor="middle">Magnification</text>
+  <path d="M310 94 V118" class="f-thin"/><text x="310" y="130" class="f-small" text-anchor="middle">Eyepiece</text>
+  <text x="215" y="58" class="f-small" text-anchor="middle">Main tube</text>
+  <text x="170" y="146" class="f-small" text-anchor="middle">schematic, right side view</text>
+</svg></figure></article><article class="card kb-entry" id="moa" data-search="moa – minute of angle a minute of angle is 1/60 of a degree. at 100 m that is 2.91 cm, at 200 m 5.82 cm – the size grows with distance. scopes with moa adjustment usually have 1/4 moa per click, about 0.73 cm at 100 m. some makers use “inch per 100 yards” (2.78 cm at 100 m), slightly less than a true moa."><h3>MOA – minute of angle</h3><p>A minute of angle is 1/60 of a degree. At 100 m that is 2.91 cm, at 200 m 5.82 cm – the size grows with distance. Scopes with MOA adjustment usually have 1/4 MOA per click, about 0.73 cm at 100 m. Some makers use “inch per 100 yards” (2.78 cm at 100 m), slightly less than a true MOA.</p><figure class="kb-fig"><svg viewBox="0 0 400 170" role="img" aria-label="Angle of MOA and mrad at 100 m">
+  <line x1="24" y1="85" x2="260" y2="85" class="f-thin" stroke-dasharray="3 3"/>
+  <path d="M24 85 L260 30 M24 85 L260 140" class="f-acc"/>
+  <path d="M24 85 L260 70 M24 85 L260 100" class="f-line"/>
+  <line x1="260" y1="22" x2="260" y2="148" class="f-line"/>
+  <circle cx="24" cy="85" r="3" class="f-dot"/>
+  <text x="24" y="108" class="f-txt" text-anchor="middle">Eye</text>
+  <path d="M266 70 h6 v30 h-6" class="f-line" fill="none"/>
+  <text x="278" y="83" class="f-txt">1 MOA</text>
+  <text x="278" y="96" class="f-txt">= 2.91 cm</text>
+  <path d="M340 30 h6 v110 h-6" class="f-acc" fill="none"/>
+  <text x="352" y="80" class="f-txt acc">1 mrad</text>
+  <text x="352" y="93" class="f-txt acc">= 10 cm</text>
+  <text x="142" y="162" class="f-txt" text-anchor="middle">100 m</text>
+  <text x="142" y="16" class="f-small" text-anchor="middle">not to scale</text>
+</svg></figure></article><article class="card kb-entry" id="mrad" data-search="mrad – milliradian one thousandth of a radian. at 100 m that is 10 cm, at 300 m 30 cm. with 0.1 mrad per click one click moves 1 cm at 100 m – easy mental maths. 1 mrad equals 3.44 moa. what matters is that reticle and turrets use the same unit."><h3>mrad – milliradian</h3><p>One thousandth of a radian. At 100 m that is 10 cm, at 300 m 30 cm. With 0.1 mrad per click one click moves 1 cm at 100 m – easy mental maths. 1 mrad equals 3.44 <a href="#moa">MOA</a>. What matters is that <a href="#absehen">reticle</a> and <a href="#tuerme">turrets</a> use the same unit.</p></article><article class="card kb-entry" id="klickwert" data-search="click value how far one click on the turret moves the point of impact, as an angle. common are 0.1 mrad (1 cm at 100 m) or 1/4 moa (0.73 cm at 100 m). formula: clicks = offset in cm ÷ (click value in cm at 100 m × distance ÷ 100). example: 6 cm low at 100 m with 0.1 mrad → 6 clicks up."><h3>Click value</h3><p>How far one click on the turret moves the point of impact, as an angle. Common are 0.1 mrad (1 cm at 100 m) or 1/4 MOA (0.73 cm at 100 m). Formula: clicks = offset in cm ÷ (click value in cm at 100 m × distance ÷ 100). Example: 6 cm low at 100 m with 0.1 mrad → 6 clicks up.</p></article><article class="card kb-entry" id="tuerme" data-search="turrets, direction and zero reset the elevation turret moves the point of impact up or down, the windage turret right or left. the arrows (u/up, r) show which way the point of impact moves. after zeroing, many turrets let you reset the scale to zero without changing the setting. a zero stop prevents turning below the zeroed value."><h3>Turrets, direction and zero reset</h3><p>The elevation turret moves the point of impact up or down, the windage turret right or left. The arrows (U/Up, R) show which way the <b>point of impact</b> moves. After zeroing, many turrets let you reset the scale to zero without changing the setting. A <b>zero stop</b> prevents turning below the zeroed value.</p></article><article class="card kb-entry" id="bildebenen" data-search="first and second focal plane in the first focal plane (ffp) the reticle grows with magnification, so its spacings (e.g. 1 mrad between dots) are correct at every magnification. in the second focal plane (sfp) the reticle always stays the same size while the target grows; spacings are only correct at one magnification, usually the highest. for driven hunts many prefer sfp because the reticle stays clearly visible at low magnification."><h3>First and second focal plane</h3><p>In the <b>first focal plane</b> (FFP) the <a href="#absehen">reticle</a> grows with magnification, so its spacings (e.g. 1 <a href="#mrad">mrad</a> between dots) are correct at every magnification. In the <b>second focal plane</b> (SFP) the reticle always stays the same size while the target grows; spacings are only correct at one magnification, usually the highest. For driven hunts many prefer SFP because the reticle stays clearly visible at low magnification.</p><figure class="kb-fig"><svg viewBox="0 0 340 260" role="img" aria-label="Reticle in first and second focal plane at 3x and 12x">
+  <text x="140" y="16" class="f-txt" text-anchor="middle">3×</text>
+  <text x="270" y="16" class="f-txt" text-anchor="middle">12×</text>
+  <text x="8" y="78" class="f-txt b">First focal</text><text x="8" y="92" class="f-small">plane: grows</text>
+  <text x="8" y="198" class="f-txt b">Second focal</text><text x="8" y="212" class="f-small">plane: constant</text>
+  <clipPath id="pa"><circle cx="140" cy="80" r="52"/></clipPath>
+  <g clip-path="url(#pa)">
+    <rect x="88" y="28" width="104" height="104" fill="#f4f1e8"/>
+    <circle cx="140" cy="80" r="4" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="140" cy="80" r="8" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="140" cy="80" r="12" fill="none" stroke="#777" stroke-width="0.8"/>
+    <g stroke="#151515" stroke-width="1"><line x1="88" y1="80" x2="192" y2="80"/><line x1="140" y1="28" x2="140" y2="132"/><line x1="144" y1="77" x2="144" y2="83"/><line x1="136" y1="77" x2="136" y2="83"/><line x1="137" y1="84" x2="143" y2="84"/><line x1="148" y1="77" x2="148" y2="83"/><line x1="132" y1="77" x2="132" y2="83"/><line x1="137" y1="88" x2="143" y2="88"/><line x1="152" y1="77" x2="152" y2="83"/><line x1="128" y1="77" x2="128" y2="83"/><line x1="137" y1="92" x2="143" y2="92"/><line x1="156" y1="77" x2="156" y2="83"/><line x1="124" y1="77" x2="124" y2="83"/><line x1="137" y1="96" x2="143" y2="96"/><line x1="160" y1="77" x2="160" y2="83"/><line x1="120" y1="77" x2="120" y2="83"/><line x1="137" y1="100" x2="143" y2="100"/></g>
+  </g>
+  <circle cx="140" cy="80" r="52" fill="none" class="f-line" stroke-width="3"/><clipPath id="pb"><circle cx="270" cy="80" r="52"/></clipPath>
+  <g clip-path="url(#pb)">
+    <rect x="218" y="28" width="104" height="104" fill="#f4f1e8"/>
+    <circle cx="270" cy="80" r="12.8" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="270" cy="80" r="25.6" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="270" cy="80" r="38.400000000000006" fill="none" stroke="#777" stroke-width="0.8"/>
+    <g stroke="#151515" stroke-width="1"><line x1="218" y1="80" x2="322" y2="80"/><line x1="270" y1="28" x2="270" y2="132"/><line x1="282.8" y1="77" x2="282.8" y2="83"/><line x1="257.2" y1="77" x2="257.2" y2="83"/><line x1="267" y1="92.8" x2="273" y2="92.8"/><line x1="295.6" y1="77" x2="295.6" y2="83"/><line x1="244.4" y1="77" x2="244.4" y2="83"/><line x1="267" y1="105.6" x2="273" y2="105.6"/><line x1="308.4" y1="77" x2="308.4" y2="83"/><line x1="231.6" y1="77" x2="231.6" y2="83"/><line x1="267" y1="118.4" x2="273" y2="118.4"/><line x1="321.2" y1="77" x2="321.2" y2="83"/><line x1="218.8" y1="77" x2="218.8" y2="83"/><line x1="267" y1="131.2" x2="273" y2="131.2"/></g>
+  </g>
+  <circle cx="270" cy="80" r="52" fill="none" class="f-line" stroke-width="3"/>
+  <clipPath id="pc"><circle cx="140" cy="200" r="52"/></clipPath>
+  <g clip-path="url(#pc)">
+    <rect x="88" y="148" width="104" height="104" fill="#f4f1e8"/>
+    <circle cx="140" cy="200" r="4" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="140" cy="200" r="8" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="140" cy="200" r="12" fill="none" stroke="#777" stroke-width="0.8"/>
+    <g stroke="#151515" stroke-width="1"><line x1="88" y1="200" x2="192" y2="200"/><line x1="140" y1="148" x2="140" y2="252"/><line x1="152" y1="197" x2="152" y2="203"/><line x1="128" y1="197" x2="128" y2="203"/><line x1="137" y1="212" x2="143" y2="212"/><line x1="164" y1="197" x2="164" y2="203"/><line x1="116" y1="197" x2="116" y2="203"/><line x1="137" y1="224" x2="143" y2="224"/><line x1="176" y1="197" x2="176" y2="203"/><line x1="104" y1="197" x2="104" y2="203"/><line x1="137" y1="236" x2="143" y2="236"/><line x1="188" y1="197" x2="188" y2="203"/><line x1="92" y1="197" x2="92" y2="203"/><line x1="137" y1="248" x2="143" y2="248"/></g>
+  </g>
+  <circle cx="140" cy="200" r="52" fill="none" class="f-line" stroke-width="3"/><clipPath id="pd"><circle cx="270" cy="200" r="52"/></clipPath>
+  <g clip-path="url(#pd)">
+    <rect x="218" y="148" width="104" height="104" fill="#f4f1e8"/>
+    <circle cx="270" cy="200" r="12.8" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="270" cy="200" r="25.6" fill="none" stroke="#777" stroke-width="0.8"/><circle cx="270" cy="200" r="38.400000000000006" fill="none" stroke="#777" stroke-width="0.8"/>
+    <g stroke="#151515" stroke-width="1"><line x1="218" y1="200" x2="322" y2="200"/><line x1="270" y1="148" x2="270" y2="252"/><line x1="282" y1="197" x2="282" y2="203"/><line x1="258" y1="197" x2="258" y2="203"/><line x1="267" y1="212" x2="273" y2="212"/><line x1="294" y1="197" x2="294" y2="203"/><line x1="246" y1="197" x2="246" y2="203"/><line x1="267" y1="224" x2="273" y2="224"/><line x1="306" y1="197" x2="306" y2="203"/><line x1="234" y1="197" x2="234" y2="203"/><line x1="267" y1="236" x2="273" y2="236"/><line x1="318" y1="197" x2="318" y2="203"/><line x1="222" y1="197" x2="222" y2="203"/><line x1="267" y1="248" x2="273" y2="248"/></g>
+  </g>
+  <circle cx="270" cy="200" r="52" fill="none" class="f-line" stroke-width="3"/>
+</svg></figure></article><article class="card kb-entry" id="absehen" data-search="reticle the aiming mark in the scope. common in german-speaking countries is the no. 4 reticle: three thick posts and a fine crosshair in the centre. an illuminated dot helps at dusk. reticles with mrad or moa marks (e.g. mil-dot) allow holdover and range estimation, provided focal plane and magnification match."><h3>Reticle</h3><p>The aiming mark in the scope. Common in German-speaking countries is the <b>No. 4 reticle</b>: three thick posts and a fine crosshair in the centre. An <b>illuminated dot</b> helps at dusk. Reticles with <a href="#mrad">mrad</a> or <a href="#moa">MOA</a> marks (e.g. Mil-Dot) allow holdover and range estimation, provided <a href="#bildebenen">focal plane</a> and magnification match.</p><figure class="kb-fig"><svg viewBox="0 0 340 150" role="img" aria-label="German No. 4 reticle, illuminated dot and Mil-Dot">
+  <clipPath id="ra"><circle cx="58" cy="62" r="48"/></clipPath>
+  <g clip-path="url(#ra)"><rect x="10" y="14" width="96" height="96" fill="#f4f1e8"/><rect x="10" y="58.5" width="32" height="7" fill="#151515"/><rect x="74" y="58.5" width="32" height="7" fill="#151515"/><rect x="54.5" y="78" width="7" height="32" fill="#151515"/><line x1="42" y1="62" x2="74" y2="62" stroke="#151515" stroke-width="0.9"/><line x1="58" y1="14" x2="58" y2="78" stroke="#151515" stroke-width="0.9"/></g>
+  <circle cx="58" cy="62" r="48" fill="none" class="f-line" stroke-width="3"/><clipPath id="rb"><circle cx="170" cy="62" r="48"/></clipPath>
+  <g clip-path="url(#rb)"><rect x="122" y="14" width="96" height="96" fill="#f4f1e8"/><rect x="122" y="58.5" width="32" height="7" fill="#151515"/><rect x="186" y="58.5" width="32" height="7" fill="#151515"/><rect x="166.5" y="78" width="7" height="32" fill="#151515"/><line x1="154" y1="62" x2="186" y2="62" stroke="#151515" stroke-width="0.9"/><line x1="170" y1="14" x2="170" y2="78" stroke="#151515" stroke-width="0.9"/><circle cx="170" cy="62" r="2.6" fill="#e0301e"/><circle cx="170" cy="62" r="5" fill="#e0301e" opacity=".25"/></g>
+  <circle cx="170" cy="62" r="48" fill="none" class="f-line" stroke-width="3"/><clipPath id="rc"><circle cx="282" cy="62" r="48"/></clipPath>
+  <g clip-path="url(#rc)"><rect x="234" y="14" width="96" height="96" fill="#f4f1e8"/><line x1="234" y1="62" x2="330" y2="62" stroke="#151515" stroke-width="0.9"/><line x1="282" y1="14" x2="282" y2="110" stroke="#151515" stroke-width="0.9"/><circle cx="242" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="22" r="1.6" fill="#151515"/><circle cx="252" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="32" r="1.6" fill="#151515"/><circle cx="262" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="42" r="1.6" fill="#151515"/><circle cx="272" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="52" r="1.6" fill="#151515"/><circle cx="292" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="72" r="1.6" fill="#151515"/><circle cx="302" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="82" r="1.6" fill="#151515"/><circle cx="312" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="92" r="1.6" fill="#151515"/><circle cx="322" cy="62" r="1.6" fill="#151515"/><circle cx="282" cy="102" r="1.6" fill="#151515"/></g>
+  <circle cx="282" cy="62" r="48" fill="none" class="f-line" stroke-width="3"/>
+  <text x="58" y="130" class="f-txt" text-anchor="middle">German No. 4</text>
+  <text x="170" y="130" class="f-txt" text-anchor="middle">with illuminated dot</text>
+  <text x="282" y="130" class="f-txt" text-anchor="middle">Mil-Dot / mrad</text>
+  <text x="282" y="143" class="f-small" text-anchor="middle">dots 1 mrad apart</text>
+</svg></figure></article><article class="card kb-entry" id="parallaxe" data-search="parallax if the target image and the reticle are not in the same plane, the reticle moves on the target when you move your head. hunting scopes are usually parallax-free at 100 m. at other distances a parallax adjustment helps, or a consistent head position with the eye centred behind the eyepiece."><h3>Parallax</h3><p>If the target image and the reticle are not in the same plane, the reticle moves on the target when you move your head. Hunting scopes are usually parallax-free at 100 m. At other distances a parallax adjustment helps, or a consistent head position with the eye centred behind the eyepiece.</p></article><article class="card kb-entry" id="augenabstand" data-search="eye relief the distance between eyepiece and eye at which the image is fully lit, usually 8 to 10 cm. if it is too short, recoil can cut the eyebrow (“scope bite”). mount the scope so that in shooting position you get a full, shadow-free image without straining your neck."><h3>Eye relief</h3><p>The distance between eyepiece and eye at which the image is fully lit, usually 8 to 10 cm. If it is too short, recoil can cut the eyebrow (“scope bite”). Mount the scope so that in shooting position you get a full, shadow-free image without straining your neck.</p></article><article class="card kb-entry" id="montage" data-search="mount and sight height the mount connects scope and rifle. tighten screws to the torque the maker specifies – too loose and the point of impact wanders, too tight and the tube can suffer. sight height is the distance between bore axis and scope centre. it decides how the trajectory crosses the line of sight and belongs in every ballistic calculator."><h3>Mount and sight height</h3><p>The mount connects scope and rifle. Tighten screws to the torque the maker specifies – too loose and the point of impact wanders, too tight and the tube can suffer. <b>Sight height</b> is the distance between bore axis and scope centre. It decides how the trajectory crosses the line of sight and belongs in every ballistic calculator.</p></article></section><section class="kb-cat" data-cat="ball"><h2>Ballistics & conditions</h2><article class="card kb-entry" id="v0" data-search="muzzle velocity the speed of the bullet at the muzzle in m/s. it depends on the load, barrel length and powder temperature. higher velocity means a flatter trajectory and less wind drift. factory figures apply to a test barrel; your own barrel can differ noticeably."><h3>Muzzle velocity</h3><p>The speed of the bullet at the muzzle in m/s. It depends on the load, <a href="#lauflaenge">barrel length</a> and <a href="#temperatur">powder temperature</a>. Higher velocity means a flatter trajectory and less wind drift. Factory figures apply to a test barrel; your own barrel can differ noticeably.</p></article><article class="card kb-entry" id="bc" data-search="ballistic coefficient (bc) a measure of how well a bullet overcomes air resistance. the higher the bc, the slower the bullet loses speed, the flatter the trajectory and the less wind drift. values are given for different models (g1, g7); only compare values of the same model."><h3>Ballistic coefficient (BC)</h3><p>A measure of how well a bullet overcomes air resistance. The higher the BC, the slower the bullet loses speed, the flatter the trajectory and the less <a href="#wind">wind</a> drift. Values are given for different models (G1, G7); only compare values of the same model.</p></article><article class="card kb-entry" id="gasgesetz" data-search="air density and the ideal gas law air resistance depends on air density. by the ideal gas law ρ = p ÷ (rs · t) with rs = 287 j/(kg·k) for dry air. at 15 °c and 1013 hpa that is 1.225 kg/m³. warmer or higher up means thinner air: about 5 % less at 30 °c, about 10 % less at 1000 m altitude. the bullet slows down less and hits higher at long range. at 100 m this hardly matters, from about 300 m it does."><h3>Air density and the ideal gas law</h3><p>Air resistance depends on air density. By the ideal gas law ρ = p ÷ (R<sub>s</sub> · T) with R<sub>s</sub> = 287 J/(kg·K) for dry air. At 15 °C and 1013 hPa that is 1.225 kg/m³. Warmer or higher up means thinner air: about 5 % less at 30 °C, about 10 % less at 1000 m altitude. The bullet slows down less and hits higher at long range. At 100 m this hardly matters, from about 300 m it does.</p></article><article class="card kb-entry" id="temperatur" data-search="powder temperature warm powder burns faster, raising pressure and muzzle velocity. depending on the powder, velocity changes by roughly 0.5 to 1.5 m/s per degree. if you zero in summer and hunt in winter, check before the season. don’t leave cartridges in direct sun or on a hot barrel."><h3>Powder temperature</h3><p>Warm powder burns faster, raising pressure and <a href="#v0">muzzle velocity</a>. Depending on the powder, velocity changes by roughly 0.5 to 1.5 m/s per degree. If you zero in summer and hunt in winter, check before the season. Don’t leave cartridges in direct sun or on a hot barrel.</p></article><article class="card kb-entry" id="wind" data-search="wind crosswind pushes the bullet sideways. what matters is not the flight time but the delay compared with flight in a vacuum: drift ≈ wind speed × (flight time − distance ÷ muzzle velocity). example .308 win at about 820 m/s with 3 m/s full-value wind: roughly 1.5 cm at 100 m, roughly 13 cm at 300 m. with the clock method, wind from 3 or 9 o’clock is full value, from 1, 5, 7 and 11 o’clock about half, from 2, 4, 8 and 10 o’clock almost full. choose a calm day for zeroing."><h3>Wind</h3><p>Crosswind pushes the bullet sideways. What matters is not the flight time but the delay compared with flight in a vacuum: drift ≈ wind speed × (flight time − distance ÷ <a href="#v0">muzzle velocity</a>). Example .308 Win at about 820 m/s with 3 m/s full-value wind: roughly 1.5 cm at 100 m, roughly 13 cm at 300 m. With the <b>clock method</b>, wind from 3 or 9 o’clock is full value, from 1, 5, 7 and 11 o’clock about half, from 2, 4, 8 and 10 o’clock almost full. Choose a calm day for zeroing.</p><figure class="kb-fig"><svg viewBox="0 0 340 192" role="img" aria-label="Clock method for crosswind">
+  <circle cx="170" cy="102" r="62" class="f-line" fill="none"/>
+  <line x1="170.0" y1="40.0" x2="170.0" y2="47.0" class="f-line"/><text x="170.0" y="28.0" class="f-txt" text-anchor="middle">0</text><line x1="201.0" y1="48.3" x2="197.5" y2="54.4" class="f-line"/><text x="209.0" y="38.5" class="f-txt" text-anchor="middle">½</text><line x1="223.7" y1="71.0" x2="217.6" y2="74.5" class="f-line"/><text x="237.5" y="67.0" class="f-txt" text-anchor="middle">0.9</text><line x1="232.0" y1="102.0" x2="225.0" y2="102.0" class="f-line"/><text x="248.0" y="106.0" class="f-txt b acc" text-anchor="middle">full</text><line x1="223.7" y1="133.0" x2="217.6" y2="129.5" class="f-line"/><text x="237.5" y="145.0" class="f-txt" text-anchor="middle">0.9</text><line x1="201.0" y1="155.7" x2="197.5" y2="149.6" class="f-line"/><text x="209.0" y="173.5" class="f-txt" text-anchor="middle">½</text><line x1="170.0" y1="164.0" x2="170.0" y2="157.0" class="f-line"/><text x="170.0" y="184.0" class="f-txt" text-anchor="middle">0</text><line x1="139.0" y1="155.7" x2="142.5" y2="149.6" class="f-line"/><text x="131.0" y="173.5" class="f-txt" text-anchor="middle">½</text><line x1="116.3" y1="133.0" x2="122.4" y2="129.5" class="f-line"/><text x="102.5" y="145.0" class="f-txt" text-anchor="middle">0.9</text><line x1="108.0" y1="102.0" x2="115.0" y2="102.0" class="f-line"/><text x="92.0" y="106.0" class="f-txt b acc" text-anchor="middle">full</text><line x1="116.3" y1="71.0" x2="122.4" y2="74.5" class="f-line"/><text x="102.5" y="67.0" class="f-txt" text-anchor="middle">0.9</text><line x1="139.0" y1="48.3" x2="142.5" y2="54.4" class="f-line"/><text x="131.0" y="38.5" class="f-txt" text-anchor="middle">½</text>
+  <path d="M170 130 L170 68" class="f-line" stroke-width="3"/>
+  <path d="M164 76 L170 64 L176 76" class="f-line" fill="none" stroke-width="2"/>
+  <text x="178" y="128" class="f-small">Shooter</text>
+  <text x="170" y="12" class="f-small" text-anchor="middle">Target (12 o’clock)</text>
+  <path d="M336 102 H264" class="f-acc" stroke-dasharray="5 3"/>
+  <path d="M272 96 L262 102 L272 108" class="f-acc" fill="none"/>
+  <text x="336" y="120" class="f-small acc" text-anchor="end">wind from 3 o’clock</text>
+</svg></figure></article><article class="card kb-entry" id="schraeg" data-search="uphill and downhill when shooting steeply up or down, gravity only acts over the horizontal distance. the bullet therefore hits higher than the measured slant range suggests. rule of thumb: use the horizontal distance (slant range × cos angle). at 30° that is 87 %."><h3>Uphill and downhill</h3><p>When shooting steeply up or down, gravity only acts over the horizontal distance. The bullet therefore hits higher than the measured slant range suggests. Rule of thumb: use the horizontal distance (slant range × cos angle). At 30° that is 87 %.</p></article></section><section class="kb-cat" data-cat="waffe"><h2>Barrel & ammunition</h2><article class="card kb-entry" id="lauf" data-search="barrel and barrel harmonics when firing, the barrel whips like a lash. where it is in that motion when the bullet leaves the muzzle decides the point of impact. anything that changes the vibration shifts the point of impact: a different load, a suppressor, pressure on the barrel, extra weight. a free-floating barrel doesn’t touch the stock and shoots more consistently. that is also why the smartphone never goes on the barrel."><h3>Barrel and barrel harmonics</h3><p>When firing, the barrel whips like a lash. Where it is in that motion when the bullet leaves the muzzle decides the point of impact. Anything that changes the vibration shifts the point of impact: a different load, a <a href="#schalldaempfer">suppressor</a>, pressure on the barrel, extra weight. A <b>free-floating</b> barrel doesn’t touch the stock and shoots more consistently. That is also why the smartphone never goes on the barrel.</p></article><article class="card kb-entry" id="laufwaerme" data-search="barrel heat and mirage with every shot the barrel gets warmer; many barrels shift their point of impact as they heat up. hot air above the barrel shimmers and distorts the image. let the barrel cool between groups until it only feels lukewarm to the touch. with thin hunting barrels this happens sooner than you think."><h3>Barrel heat and mirage</h3><p>With every shot the barrel gets warmer; many barrels shift their point of impact as they heat up. Hot air above the barrel shimmers and distorts the image. Let the barrel cool between <a href="#gruppe">groups</a> until it only feels lukewarm to the touch. With thin hunting barrels this happens sooner than you think.</p></article><article class="card kb-entry" id="drall" data-search="twist the rifling spins the bullet and stabilises it. the twist rate states the distance over which the bullet makes one full turn, e.g. 1:11″ = one turn in 11 inches (279 mm). long, heavy bullets need a faster (shorter) twist; an old rule of thumb for this is the greenhill formula. with right-hand twist the bullet drifts slightly right at long range (spin drift) – at 100 m only millimetres."><h3>Twist</h3><p>The rifling spins the bullet and stabilises it. The <b>twist rate</b> states the distance over which the bullet makes one full turn, e.g. 1:11″ = one turn in 11 inches (279 mm). Long, heavy bullets need a faster (shorter) twist; an old rule of thumb for this is the Greenhill formula. With right-hand twist the bullet drifts slightly right at long range (<b>spin drift</b>) – at 100 m only millimetres.</p><figure class="kb-fig"><svg viewBox="0 0 340 140" role="img" aria-label="Rifling twist">
+  <defs><clipPath id="tw"><rect x="30" y="46" width="276" height="48" rx="4"/></clipPath></defs>
+  <rect x="30" y="46" width="276" height="48" rx="4" class="f-body"/>
+  <g clip-path="url(#tw)"><path d="M30 46 L74 94" class="f-acc" stroke-width="2"/><path d="M52 46 L96 94" class="f-acc" stroke-width="2"/><path d="M74 46 L118 94" class="f-acc" stroke-width="2"/><path d="M96 46 L140 94" class="f-acc" stroke-width="2"/><path d="M118 46 L162 94" class="f-acc" stroke-width="2"/><path d="M140 46 L184 94" class="f-acc" stroke-width="2"/><path d="M162 46 L206 94" class="f-acc" stroke-width="2"/><path d="M184 46 L228 94" class="f-acc" stroke-width="2"/><path d="M206 46 L250 94" class="f-acc" stroke-width="2"/><path d="M228 46 L272 94" class="f-acc" stroke-width="2"/><path d="M250 46 L294 94" class="f-acc" stroke-width="2"/><path d="M272 46 L316 94" class="f-acc" stroke-width="2"/><path d="M294 46 L338 94" class="f-acc" stroke-width="2"/></g>
+  <path d="M30 110 H306" class="f-line"/><path d="M30 104 V116 M306 104 V116" class="f-line"/>
+  <text x="168" y="128" class="f-txt" text-anchor="middle">Twist rate, e.g. 1:11″ = one turn in 279 mm</text>
+  <text x="168" y="34" class="f-txt" text-anchor="middle">Rifling in the barrel (cut open)</text>
+</svg></figure></article><article class="card kb-entry" id="lauflaenge" data-search="barrel length a longer barrel gives the powder more time to accelerate the bullet: more muzzle velocity, a slightly flatter trajectory. how much depends strongly on the calibre – little for short cartridges, more for magnums. shorter barrels are handier and popular with a suppressor."><h3>Barrel length</h3><p>A longer barrel gives the powder more time to accelerate the bullet: more <a href="#v0">muzzle velocity</a>, a slightly flatter trajectory. How much depends strongly on the calibre – little for short cartridges, more for magnums. Shorter barrels are handier and popular with a <a href="#schalldaempfer">suppressor</a>.</p></article><article class="card kb-entry" id="schalldaempfer" data-search="suppressor a suppressor changes weight and vibration at the end of the barrel and so usually the point of impact, often by several centimetres. always zero in the configuration you hunt with, and check again after removing and refitting it."><h3>Suppressor</h3><p>A suppressor changes weight and vibration at the end of the barrel and so usually the point of impact, often by several centimetres. Always zero in the configuration you hunt with, and check again after removing and refitting it.</p></article><article class="card kb-entry" id="laborierung" data-search="load and lot the load is the exact make-up of a cartridge: bullet, weight, powder, charge. every load has its own point of impact, so re-zero after a change. a lot is a production batch; even lots of the same cartridge can differ slightly. if you want to be precise, buy a season’s ammunition from one lot."><h3>Load and lot</h3><p>The <b>load</b> is the exact make-up of a cartridge: bullet, weight, powder, charge. Every load has its own point of impact, so re-zero after a change. A <b>lot</b> is a production batch; even lots of the same cartridge can differ slightly. If you want to be precise, buy a season’s ammunition from one lot.</p></article></section>
+  <a class="btn primary" href="/en/">Zero your rifle with Nullpunkt</a>
+  <p class="muted small">All figures are guide values. The specifications of the makers of rifle, optics and ammunition take precedence.</p>
+  <nav class="links"><a href="#top">back to top</a><a href="/impressum.html">Legal notice (German)</a><a href="/datenschutz.html">Privacy (German)</a></nav>
+</main>
+<script>
+  // Schnellsuche: Karten und Inhaltsverzeichnis nach Suchbegriff filtern
+  (function () {
+    var q = document.getElementById('kbq');
+    var cards = [].slice.call(document.querySelectorAll('.kb-entry'));
+    var toc = [].slice.call(document.querySelectorAll('.kb-toc li'));
+    var cats = [].slice.call(document.querySelectorAll('.kb-cat'));
+    var none = document.getElementById('kbnone');
+    q.addEventListener('input', function () {
+      var s = q.value.trim().toLowerCase();
+      var hits = 0;
+      cards.forEach(function (c) { var on = !s || c.dataset.search.indexOf(s) >= 0; c.hidden = !on; if (on) hits++; });
+      toc.forEach(function (li) { li.hidden = !!s && !document.getElementById(li.firstChild.getAttribute('href').slice(1)).dataset.search.includes(s); });
+      cats.forEach(function (c) { c.hidden = !c.querySelector('.kb-entry:not([hidden])'); });
+      none.hidden = hits > 0;
+    });
+  })();
+</script>
+</body>
+</html>
