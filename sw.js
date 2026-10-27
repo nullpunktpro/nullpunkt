@@ -1,5 +1,5 @@
 // Offline-Fähigkeit: erst Netz (damit Updates sofort ankommen), ohne Netz aus dem Cache.
-const CACHE = 'nullpunkt-v5';
+const CACHE = 'nullpunkt-v6';
 const SHELL = [
   './',
   'index.html',
