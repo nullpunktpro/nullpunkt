@@ -37,7 +37,7 @@ export const T = {
     title: 'Bevor es losgeht',
     items: [
       'Nullpunkt ersetzt keine Sachkunde und keine Einweisung. Es gilt die Schießstandordnung und die Anweisung der Standaufsicht.',
-      'Jedes Smartphone mit Bewegungssensoren funktioniert (iPhone und Android). Es muss fest und ohne Spiel an der Waffe sitzen: am besten in einer Handyhalterung für Schiene oder Zielfernrohr, sonst mit zwei Kabelbindern oder Klettband um Vorderschaft oder Montage, Handy in einer Hülle. Display zu dir, Kamera frei. Nie an Lauf, Mündung oder Schalldämpfer: dort wirken mehrere hundert g und über 300 °C, und Zusatzgewicht am Lauf verschiebt die Treffpunktlage.',
+      'Jedes Smartphone mit Bewegungssensoren funktioniert (iPhone und Android). Es muss fest und ohne Spiel an der Waffe sitzen. Am einfachsten geht das mit einem <a href="https://www.amazon.de/s?k=flexibles+stativ+smartphone" target="_blank" rel="noopener">flexiblen Smartphone-Stativ</a> mit biegsamen Beinen (gibt es für wenige Euro): Beine fest um Zielfernrohr, Montage oder Vorderschaft wickeln, Handy einklemmen, auf Spiel prüfen. Notfalls gehen auch zwei Kabelbinder oder Klettband. Display zu dir, Kamera frei. Nie an Lauf, Mündung oder Schalldämpfer: Dort wirken mehrere hundert g und über 300 °C, und Zusatzgewicht am Lauf verschiebt die Treffpunktlage.',
       'Trockentraining nur mit entladener Waffe und Pufferpatrone.',
       'Die Ruhewerte sind eine Trainingshilfe. Die Grenzen zwischen „ruhig“ und „verrissen“ sind vorläufig.',
     ],

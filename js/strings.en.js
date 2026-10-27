@@ -37,7 +37,7 @@ export const T = {
     title: 'Before you start',
     items: [
       'Nullpunkt does not replace proper training or instruction. Range rules and the range officer always come first.',
-      'Any smartphone with motion sensors works (iPhone and Android). It must sit firmly on the rifle without any play: ideally in a phone mount for a rail or scope, otherwise with two cable ties or a Velcro strap around the fore-end or the scope mount, phone in a case. Screen facing you, camera uncovered. Never on the barrel, muzzle or suppressor: several hundred g and over 300 °C act there, and extra weight on the barrel shifts the point of impact.',
+      'Any smartphone with motion sensors works (iPhone and Android). It must sit firmly on the rifle without any play. The easiest way is a <a href="https://www.amazon.com/s?k=flexible+tripod+smartphone" target="_blank" rel="noopener">flexible smartphone tripod</a> with bendable legs (available for a few euros): wrap the legs tightly around the scope, the mount or the fore-end, clamp the phone in and check for play. Two cable ties or a Velcro strap also work in a pinch. Screen facing you, camera uncovered. Never on the barrel, muzzle or suppressor: several hundred g and over 300 °C act there, and extra weight on the barrel shifts the point of impact.',
       'Dry fire only with an unloaded rifle and a snap cap.',
       'The stability values are a training aid. The limits between “steady” and “jerked” are provisional.',
     ],
